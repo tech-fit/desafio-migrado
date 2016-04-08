@@ -12,6 +12,7 @@ Se mesmo assim, nada der certo, envie seu teste para tecnologia@minhavida.com.br
 
 ## Testes
 
-*[Vaga em .NET](https://github.com/minha-vida/desafio/tree/master/dotnet)
-*[Estágio](https://github.com/minha-vida/desafio/tree/master/estagio)
+* [Vaga em .NET](https://github.com/minha-vida/desafio/tree/master/dotnet)
+
+* [Estágio](https://github.com/minha-vida/desafio/tree/master/estagio)
 
