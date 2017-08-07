@@ -1,4 +1,4 @@
-# Desafio de TI Grupo Minha Vida
+# Desafio de TI da TechFit apps
 Neste repositório você terá acesso aos desafios que criamos para as principais tecnologias que utilizamos.
 
 Dentro de cada pasta existe um README com a descrição de cada desafio.
@@ -7,12 +7,12 @@ Para começar, basta criar um fork deste projeto e implementar o desafio, após 
 
 Caso você não conheça como utilizar o github https://help.github.com/articles/fork-a-repo/
 
-Se mesmo assim, nada der certo, envie seu teste para tecnologia@minhavida.com.br
+Se mesmo assim, nada der certo, envie seu teste para tecnologia@techfitapps.com
 
 
 ## Testes
 
-* [Vaga em .NET](https://github.com/minha-vida/desafio/tree/master/dotnet)
+* [Vaga em .NET](https://github.com/TechFit-apps/desafio/tree/master/dotnet)
 
-* [Estágio](https://github.com/minha-vida/desafio/tree/master/estagio)
+* [Estágio](https://github.com/TechFit-apps/desafio/tree/master/estagio)
 

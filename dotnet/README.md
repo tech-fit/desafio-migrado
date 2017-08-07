@@ -1,4 +1,4 @@
-# Desafio em .NET do Grupo Minha Vida: ASP.NET e Web API
+# Desafio em .NET da TechFit apps: ASP.NET e Web API
 
 ## Necessidades
 
