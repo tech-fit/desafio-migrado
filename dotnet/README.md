@@ -1,4 +1,4 @@
-# Desafio em .NET da TechFit apps: ASP.NET e Web API
+# Desafio em .NET da tech.fit: ASP.NET e Web API
 
 ## Necessidades
 
