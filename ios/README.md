@@ -1,5 +1,4 @@
 # Teste desenvolvedor mobile iOS
-----------------------------------------------------
 
 Uma das áreas de um dos nossos apps, o Tecnonutri, é uma área social estilo Instagram onde as pessoas postam refeições fitness. 
 
