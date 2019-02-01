@@ -1,30 +1,46 @@
-# Criar um aplicativo de consulta na api do [Dribbble](https://dribbble.com) #
+# Teste desenvolvedor mobile Android
 
-Criar um aplicativo para consultar a [Dribbble API](http://developer.dribbble.com/v1/) e trazer os shots + populares . Basear-se no mockup fornecido:
+Uma das áreas de um dos nossos apps, o Tecnonutri, é uma área social estilo Instagram onde as pessoas postam refeições saudáveis. 
 
-![Screen Shot 2014-10-09 at 3.42.06 PM.png](https://bitbucket.org/repo/bApLBb/images/3039998141-Screen%20Shot%202014-10-09%20at%203.42.06%20PM.png)
+Para esse teste, você deverá criar um app Android nativo, com 2 telas de visualização dos endpoints.
 
-Nos envie uma solução mesmo que você não consiga fazer tudo. O teste serve pra conhecermos a sua forma de pensar, resolver problemas e seu estilo de código.
+Para efeitos de simulação de dados, as informações virão da seguinte API:
+  * https://thecatapi.com/
+  * https://documenter.getpostman.com/view/4016432/RWToRJCq
 
-# Deve conter #
+Exemplo de endpoints
+  * https://api.thecatapi.com/api/v1/images/?limit=10
+  * https://api.thecatapi.com/v1/images/BkIEhN3pG
 
-* Arquivo .gitignore
-* Mapeamento json -> Objeto.
-* Lista de shots API (http://api.dribbble.com/shots/popular?page=1)
-* Paginação automática (scroll infinito) na tela de lista de shots
-* Paginação deve detectar quando chega a última página e parar de solicitar mais
-* Pull to refresh
-* Tela de detalhe de um shot ao clicar em um item da lista de shots
-* Tela de detalhe de um shot deve conter nome do autor, foto e descrição do shot
-* Cache de Imagens / Download Assincrono.
+Para acessar é necessário um token da API, que pode ser conseguido logando no site com seu email.
 
-# Extras #
+O aplicativo deverá ter duas interfaces, uma lista com as imagens e um tela de detalhe de uma imagem.
 
-* Testes unitários no projeto.
-* Material Design
-* Compartilhar shots no facebook e twitter
+Uma feature que deve ser desenvolvida é o CURTIR de uma das imagens
+(com um armazenamento local das fotos que foram curtidas)
 
-# Submissão #
+A paleta de cores que deve ser utilizada é a seguinte:
+* #1c86ee (fundo e topo)
+* #ffdd00 (botões)
 
-Para iniciar o desafio, faça um fork deste repositório, crie uma branch com o seu nome e depois envie pra gente o pull request.
-Se você apenas clonar o repositório não vai conseguir fazer push pra gente e depois vai ser mais complicado fazer o pull request.
+Existem alguns clientes que passam noite vendo a foto dos gatos, para eles seria necessário a possibilidade de trocar o tema do aplicativo em uma configuração (como se fosse um modo noturno).
+
+* #113266 (fundo e topo)
+* #ffffff (botões)
+
+
+Atente para:
+
+* O código deverá ser repassado para a gente em um repositório do GitHub.
+
+* Atente para guidelines de design, não esperamos que você seja um super designer, mas se atentar aos guides da HIG e manter uma boa harmonia visual considerando que o app deverá ser um produto devidamente lapidado irá contar pontos.
+
+* Atente para os diversos estados que um app que consome uma api pode ter: Listas vazias, Loading durante o request, Retornos de erros.
+
+* E não se esqueça: nós nos impressionamos muito mais com um app acabadinho digno de subir para a app store do que com aquela arquitetura cabulosa copiada da internet (mas a gente lê código também, então capricha).
+
+## Diferencial
+
+Ficar fazendo CRUD é fácil :) mas hoje em dia podemos fazer muito mais né.
+
+Esse desafio é você fazer um filtro de busca no feed por cor do gato. Mas como assim a cor? Não temos esse dado na API! Porém temos a foto! E diversas API’s de Computer Vision API que certamente te ajudará.
