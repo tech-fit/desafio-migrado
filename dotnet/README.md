@@ -19,15 +19,15 @@ Um Alimento possui algumas características como:
 
 Cada alimento pode ter medidas como: Colher de sopa, Escumadeira, Xicara. Ex:
 
-Arroz
-    100 gramas
-    Calorias (valor energético)	128 kcal
-    Carboidratos	28,1g
-    Proteínas	2,5g
-    Gorduras totais	0,2g
-    Gorduras saturadas	0,05g
-    Fibra alimentar	1,6g
-    Sódio	1mg
+    Arroz
+        100 gramas
+        Calorias (valor energético)	128 kcal
+        Carboidratos	28,1g
+        Proteínas	2,5g
+        Gorduras totais	0,2g
+        Gorduras saturadas	0,05g
+        Fibra alimentar	1,6g
+        Sódio	1mg
 
     Medidas
         Escumadeira: 30 gramas
@@ -35,15 +35,16 @@ Arroz
         Colher de sopa: 25 gramas
 
 
-Pão francês
-    40 gramas
-    Calorias (valor energético)	150 kcal
-    Carboidratos	29,3 g
-    Proteínas	4 g
-    Gorduras totais	1,55 g
-    Gorduras saturadas	0,5 g
-    Fibra alimentar	1,15 g
-    Sódio	324 mg
+    Pão francês
+        40 gramas
+        Calorias (valor energético)	150 kcal
+        Carboidratos	29,3 g
+        Proteínas	4 g
+        Gorduras totais	1,55 g
+        Gorduras saturadas	0,5 g
+        Fibra alimentar	1,15 g
+        Sódio	324 mg
+
 
     Medidas
         Unidade: 40 gramas
