@@ -18,7 +18,17 @@ Para acessar é necessário um token da API, que pode ser conseguido logando no 
 O aplicativo deverá ter duas interfaces, uma lista com as imagens e um tela de detalhe de uma imagem.
 
 Uma feature que deve ser desenvolvida é o CURTIR de uma das imagens
-(pode ser desenvolvido um armazenamento local das fotos que foram curtidas)
+(com um armazenamento local das fotos que foram curtidas)
+
+A paleta de cores que deve ser utilizada é a seguinte:
+* #1c86ee (fundo e topo)
+* #ffdd00 (botões)
+
+Existem alguns clientes que passam noite vendo a foto dos gatos, para eles seria necessário a possibilidade de trocar o tema do aplicativo em uma configuração (como se fosse um modo noturno).
+
+* #113266 (fundo e topo)
+* #ffffff (botões)
+
 
 Atente para:
 
