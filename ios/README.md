@@ -30,7 +30,7 @@ Atente para:
 
 * E não se esqueça: nós nos impressionamos muito mais com um app acabadinho digno de subir para a app store do que com aquela arquitetura cabulosa copiada da internet (mas a gente lê código também, então capricha).
 
-# Desafio
+## Diferencial
 
 Ficar fazendo CRUD é fácil :) mas hoje em dia podemos fazer muito mais né.
 
