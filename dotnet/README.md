@@ -35,6 +35,7 @@ Cada alimento pode ter medidas como: Colher de sopa, Escumadeira, Xicara. Ex:
         Colher de sopa: 25 gramas
 
 
+
     Pão francês
         40 gramas
         Calorias (valor energético)	150 kcal
