@@ -6,29 +6,29 @@ Neste projeto, temos a necessidade de criar um cadastro de Alimentos e uma Web A
 
 Um Alimento possui algumas características como: 
 
-    Nome
+* Nome
 
-    Quantidade de gramas
+* Quantidade de gramas
 
-    Calorias
+* Calorias
 
-    Carboidratos
+* Carboidratos
 
-    Proteínas
+* Proteínas
 
-    Gorduras totais
+* Gorduras totais
 
-    Gorduras saturadas
+* Gorduras saturadas
 
-    Fibra alimentar
+* Fibra alimentar
 
-    Sódio
+* Sódio
 
-    Medidas
+* Medidas
 
-    Tags
+* Tags
 
-    
+
 
 Cada alimento pode ter medidas como: Colher de sopa, Escumadeira, Xicara. Ex:
 
