@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Dominio\Tech.Dominio.csproj" />
+    <ProjectReference Include="..\Tech.WebAPI\Tech.WebAPI.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tech.Dominio.ValueObjects;
+using Tech.WebAPI.Domain.ValueObjects;
 
 namespace Tech.Teste
 {
@@ -20,14 +20,6 @@ namespace Tech.Teste
             var tag1 = new Tag("fibra");
             var tag2 = new Tag("fibra");
             Assert.IsTrue(tag1.Equals(tag2));
-        }
-
-        [TestMethod]
-        public void ToEqualsIsFalse()
-        {
-            var tag1 = new Tag("fibra");
-            var tag2 = new Tag("gordura");
-            Assert.IsFalse(tag1.Equals(tag2));
         }
     }
 }
