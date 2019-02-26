@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Tech.WebAPI.Persistence;
+using Tech.WebAPI.Service;
 
 namespace Tech.WebAPI
 {
@@ -21,6 +22,7 @@ namespace Tech.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddScoped<IAlimentoService, AlimentoService>()
                 .AddDbContext<TechContext>(x => x.UseSqlServer(Configuration.GetConnectionString("strConn")))
                 .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

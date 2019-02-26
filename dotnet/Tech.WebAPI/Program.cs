@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Logging;
 using System;
-using System.IO;
-using System.Net;
 
 namespace Tech.WebAPI
 {
@@ -21,6 +17,7 @@ namespace Tech.WebAPI
 
         // Configuração do webserver Kestrel retirada do link abaixo:
         //https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2
+
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
              WebHost
             .CreateDefaultBuilder()

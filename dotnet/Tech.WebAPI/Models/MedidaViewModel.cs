@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Tech.WebAPI.Domain;
 
-namespace Tech.WebAPI.ModelViews
+namespace Tech.WebAPI.Models
 {
+    [Serializable]
     public class MedidaViewModel
     {
         public string Nome { get; set; }

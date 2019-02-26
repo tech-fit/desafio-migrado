@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Tech.WebAPI.Domain;
-using Tech.WebAPI.ModelViews;
+using Tech.WebAPI.Models;
 using Tech.WebAPI.Persistence;
 
 namespace Tech.WebAPI.Controllers

@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using Tech.WebAPI.Domain.ValueObjects;
 
-namespace Tech.WebAPI.ModelViews
+namespace Tech.WebAPI.Models
 {
     [Serializable]
-    public class AlimentoViewModel
+    public class NovoAlimentoViewModel
     {
+
         public string Nome { get; set; }
         public decimal? Peso { get; set; }
         public decimal? Caloria { get; set; }
@@ -16,5 +15,6 @@ namespace Tech.WebAPI.ModelViews
         public decimal? GorduraSaturada { get; set; }
         public decimal? FibraAlimentar { get; set; }
         public decimal? Sodio { get; set; }
+        public string Tag { get; set; }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Tech.WebAPI.Domain;
-using Tech.WebAPI.Persistence.Configuration;
 
 namespace Tech.WebAPI.Persistence
 {
