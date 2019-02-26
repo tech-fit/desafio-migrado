@@ -14,9 +14,11 @@ namespace Tech.WebAPI.ModelViews
             return new MedidaViewModel() { Nome = medida.Nome, Peso = medida.Peso };
         }
 
-        public static IEnumerable<MedidaViewModel> GetFrom(IEnumerable<Medida> medidas)
+        public static List<MedidaViewModel> GetFrom(IEnumerable<Medida> medidas)
         {
-            return medidas.Select(x => GetFrom(x));
+            return medidas.Select(x => GetFrom(x)).ToList();
         }
+
+        public override string ToString() => $"{Nome}: {Peso} gramas";
     }
 }

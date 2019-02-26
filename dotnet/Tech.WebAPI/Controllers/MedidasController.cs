@@ -15,20 +15,17 @@ namespace Tech.WebAPI.Controllers
     {
         private readonly TechContext _db;
 
-        public MedidasController(TechContext context)
-        {
-            _db = context;
-        }
+        public MedidasController(TechContext context) => _db = context;
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Medida>>> GetAsync()
+        public async Task<ActionResult<IEnumerable<MedidaViewModel>>> GetAsync()
         {
             var entities = await _db.Medidas.ToListAsync();
 
             if (!entities.Any())
                 return NotFound();
 
-            return entities;
+            return MedidaViewModel.GetFrom(entities);
         }
 
         [HttpGet("{id}")]

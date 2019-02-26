@@ -1,25 +1,20 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Tech.WebAPI.Domain.ValueObjects;
 
-namespace Tech.WebAPI.Domain
+namespace Tech.WebAPI.ModelViews
 {
-    public class Alimento : EntityBase<int>
+    [Serializable]
+    public class AlimentoViewModel
     {
-        public Alimento()
-        {
-            Medidas = new HashSet<Medida>();
-        }
-
         public string Nome { get; set; }
         public decimal? Peso { get; set; }
         public decimal? Caloria { get; set; }
         public decimal? Carboidrato { get; set; }
         public decimal? Proteina { get; set; }
-        public decimal? GorduraTotail { get; set; }
+        public decimal? GorduraTotal { get; set; }
         public decimal? GorduraSaturada { get; set; }
         public decimal? FibraAlimentar { get; set; }
         public decimal? Sodio { get; set; }
-        public string Tag { get; set; }
-
-        public IEnumerable<Medida> Medidas { get; set; }
     }
 }
