@@ -6,8 +6,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Domain\Extension\**" />
+    <Content Remove="Domain\Extension\**" />
+    <EmbeddedResource Remove="Domain\Extension\**" />
+    <None Remove="Domain\Extension\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Service\CacheService.cs" />
+    <Compile Remove="Service\ICacheService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.2.0" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿$("button").on("click", () => {
     $.ajax({
-        url: "https://localhost:5001/api/alimento",
+        url: "https://localhost:5001/api/alimentos",
         type: "POST",
         contentType: "application/json; charset=utf-8",
         data: JSON.stringify({
@@ -12,7 +12,8 @@
             "GorduraTotal": $("form").find("[name='GorduraTotal']").val(),
             "GorduraSaturada": $("form").find("[name='GorduraSaturada']").val(),
             "FibraAlimentar": $("form").find("[name='FibraAlimentar']").val(),
-            "Sodio": $("form").find("[name='Sodio']").val()
+            "Sodio": $("form").find("[name='Sodio']").val(),
+            "Tag": $("form").find("[name='Tag']").val()
         }),
         success: response => {
 

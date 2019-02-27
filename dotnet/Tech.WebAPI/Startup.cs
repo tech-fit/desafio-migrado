@@ -1,33 +1,36 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Net.Http.Headers;
+using System;
 using Tech.WebAPI.Persistence;
 using Tech.WebAPI.Service;
+using Tech.WebAPI.Validators;
 
 namespace Tech.WebAPI
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration configuration) => Configuration = configuration;
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                .AddResponseCaching()
                 .AddScoped<IAlimentoService, AlimentoService>()
                 .AddDbContext<TechContext>(x => x.UseSqlServer(Configuration.GetConnectionString("strConn")))
-                .AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+                .AddMvc()
+                .AddFluentValidation(o => o.RegisterValidatorsFromAssemblyContaining<NovoAlimentoValidator>())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -36,13 +39,37 @@ namespace Tech.WebAPI
             }
             else
             {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
+            }
+
+            // executar Migrations ao rodar a aplicação
+            using (var scope = app.ApplicationServices.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+                var techContext = services.GetService<TechContext>();
+                techContext.Database.EnsureCreated();
             }
 
             app.UseDefaultFiles();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+
+            // Configuração de middleware de cache retirada do link abaixo
+            // https://docs.microsoft.com/en-us/aspnet/core/performance/caching/middleware?view=aspnetcore-2.2
+            app.UseResponseCaching();
+            app.Use(async (context, next) =>
+            {
+                context.Response.GetTypedHeaders().CacheControl =
+                    new CacheControlHeaderValue()
+                    {
+                        Public = true,
+                        MaxAge = TimeSpan.FromMinutes(1)
+                    };
+                context.Response.Headers[HeaderNames.Vary] = new string[] { "Accept-Encoding" };
+
+                await next();
+            });
+
             app.UseMvc();
         }
     }

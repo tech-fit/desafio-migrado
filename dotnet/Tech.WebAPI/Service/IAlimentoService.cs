@@ -8,6 +8,7 @@ namespace Tech.WebAPI.Service
     {
         Task<AlimentoViewModel> GetAsync(int id);
         Task<List<AlimentoViewModel>> GetAsync();
+        Task<List<AlimentoViewModel>> GetAsync(AlimentoQuery query);
         void Save(NovoAlimentoViewModel alimento);
     }
 }

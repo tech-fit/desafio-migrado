@@ -15,7 +15,7 @@
 
         public override string ToString()
         {
-            return $"#{_valor.ToLower()}";
+            return $"#{_valor.ToLower()} ";
         }
 
         public override bool Equals(object obj)

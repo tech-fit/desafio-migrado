@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Tech.WebAPI.Domain
 {
@@ -18,8 +19,15 @@ namespace Tech.WebAPI.Domain
         public decimal? GorduraSaturada { get; set; }
         public decimal? FibraAlimentar { get; set; }
         public decimal? Sodio { get; set; }
-        public string Tag { get; set; }
+        private string _tag;
+        public string Tag
+        {
+            get { return _tag; }
+            set { _tag = Convert.ToString(value).Trim(); }
+        }
+
 
         public IEnumerable<Medida> Medidas { get; set; }
+
     }
 }

@@ -13,24 +13,27 @@ namespace Tech.WebAPI.Service
     {
         private readonly TechContext _db;
 
-        public AlimentoService(TechContext context) => _db = context;
+        public AlimentoService(TechContext context)
+        {
+            _db = context;
+        }
 
         public async Task<AlimentoViewModel> GetAsync(int id)
         {
             var entity = await _db.Alimentos.FindAsync(id);
-
-            if (entity == null)
-                throw new AlimentoNotFoundException();
-
             return new AlimentoViewModel(entity);
         }
 
         public async Task<List<AlimentoViewModel>> GetAsync()
         {
             var entities = await _db.Alimentos.ToListAsync();
+            return entities.Select(x => new AlimentoViewModel(x)).ToList();
+        }
 
-            if (entities == null)
-                throw new AlimentoNotFoundException();
+        public async Task<List<AlimentoViewModel>> GetAsync(AlimentoQuery query)
+        {
+            var entities = await _db.Alimentos
+                .Where(x => x.Nome.ToLower().Contains(query.Alimento)).ToListAsync();
 
             return entities.Select(x => new AlimentoViewModel(x)).ToList();
         }
@@ -47,7 +50,8 @@ namespace Tech.WebAPI.Service
                 GorduraTotal = alimento.GorduraTotal,
                 GorduraSaturada = alimento.GorduraSaturada,
                 FibraAlimentar = alimento.FibraAlimentar,
-                Sodio = alimento.Sodio
+                Sodio = alimento.Sodio,
+                Tag = alimento.Tag
             };
 
             _db.Alimentos.Add(entity);
