@@ -1,0 +1,18 @@
+Ao execuar a aplicação o sistema irá criar, via Migrations, a base de dados TechDB.mdf
+
+Endpoints disponíveis:
+- [GET] Lista todos os alimentos cadastrados: https:localhost:5001/api/alimentos/all
+- [GET] Busca alimentos por nome: https:localhost:5001/api/alimentos/ (parâmetro deve ser enviado no corpo da requisição)
+- [GET] Busca alimento por id: https:localhost:5001/api/alimentos/{id}
+- [POST] Grava um novo alimento
+
+
+Afim de facilitar testes e verificações existem duas páginas .html:
+- https:localhost:5001/novo.html
+- https:localhost:5001/lista.html
+
+
+Referências:
+- Response Caching Middleware: https://docs.microsoft.com/en-us/aspnet/core/performance/caching/middleware?view=aspnetcore-2.2
+- Kestrel web server: https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2
+- Fluent Validation: https://fluentvalidation.net/
