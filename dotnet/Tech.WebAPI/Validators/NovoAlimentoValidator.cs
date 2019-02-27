@@ -41,6 +41,6 @@ namespace Tech.WebAPI.Validators
             return true;
         }
 
-        private string MsgDecimalInvalido = "Valor deve ser maior ou igual a zero.";
+        private readonly string MsgDecimalInvalido = "Valor deve ser maior ou igual a zero.";
     }
 }
