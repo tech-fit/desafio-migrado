@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CatDetailViewController.viewWillAppear(_:):CatDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "btnLike">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CatImageCollectionViewController.viewWillAppear(_:):CatImageCollectionViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "SegmentedColors.allValues[UserDefaultsManager.colorNumber()].rawValue)">
+            </PersistentString>
+            <PersistentString
+               value = "UserDefaultsManager.colorNumber()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CatDetailViewController.setupButton(for:):CatDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "ThemeColorsButton.allValues[UserDefaultsManager.themeNumber()].rawValue">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "CatDetailViewController.loadCat():CatDetailViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "catImage.id">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

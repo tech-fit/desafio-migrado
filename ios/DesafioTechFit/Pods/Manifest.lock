@@ -1,0 +1,29 @@
+PODS:
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
+  - paper-onboarding (5.0.0)
+  - SwiftGifOrigin (1.6.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - AlamofireImage
+  - paper-onboarding
+  - SwiftGifOrigin
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - paper-onboarding
+    - SwiftGifOrigin
+
+SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
+  paper-onboarding: a2e3a710fd27ac0b5635ec5490660e7ec09289b5
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+
+PODFILE CHECKSUM: 601b37a841675a3ff470a7f2b6471c128d1f8dd8
+
+COCOAPODS: 1.6.0.beta.2
