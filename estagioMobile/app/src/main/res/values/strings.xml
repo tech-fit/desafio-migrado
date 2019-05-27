@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">mobiletest</string>
+
+    <string name="meal_of">Refeição de</string>
+    <string name="energy_label">Cal</string>
+    <string name="energy_unity">Kcal</string>
+    <string name="grams_unity">g</string>
+    <string name="carbohydrate_label">Carb</string>
+    <string name="protein_label">Prot</string>
+    <string name="fat_label">Gord</string>
+    <string name="food_grams_mask">(%s g)</string>
+    <string name="food_summary">Total Consumido</string>
+    <string name="kcal_mask">%s kcal</string>
+
+    <string name="profile_name">Nome do Usuário</string>
+    <string name="profile_goal">Objetivo</string>
+
+    <string-array name="meal_type_array">
+        <item>Café da Manhã de</item>
+        <item>Lanche da Manhã de</item>
+        <item>Almoço de</item>
+        <item>Lanche da Tarde de</item>
+        <item>Jantar de</item>
+        <item>Ceia de</item>
+        <item>Pré-Treino de</item>
+        <item>Pós-Treino de</item>
+    </string-array>
+
+    <string name="feed_load_error">Impossível carregar o feed</string>
+    <string name="post_load_error">Impossível carregar os detalhes da publicação</string>
+    <string name="mini_post_load_error">Impossível carregar as publicações do usuário</string>
 </resources>

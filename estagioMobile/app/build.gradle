@@ -23,6 +23,8 @@ android {
 }
 
 dependencies {
+
+    //Bibliotecas padrão do Android
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -31,4 +33,27 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    //Retrofit: usado para fazer requisições HTTP
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    //Circle ImageView: view circular para imagens
+    implementation 'de.hdodenhof:circleimageview:2.2.0'
+
+    //Picasso: usado para fazer download de imagens
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    //Gson: biblioteca que mapeia JSON para objetos Kotlin
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //RefreshLayout
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+
+    //RecyclerView
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    //CardView
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
 }
