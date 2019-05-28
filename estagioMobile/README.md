@@ -1,8 +1,12 @@
-# Desafio em Mobile da tech.fit: Android App.
+# Desafio Estágio Mobile da tech.fit: Android App.
 
 Uma das áreas de um dos nossos apps, o Tecnonutri, é uma área social estilo Instagram onde as pessoas postam refeições fitness.
 
 Para esse teste, você deverá clonar esse repositório com um projeto Android já existente, e criar 2 telas de visualização dos endpoints da nossa rede social.
+
+Caso você não conheça como utilizar o github https://help.github.com/articles/fork-a-repo/
+
+Se mesmo assim, nada der certo, envie seu teste para tecnologia@tech.fit
 
 
 Atente para:
@@ -16,26 +20,27 @@ Atente para:
  * E não se esqueça: nós nos impressionamos muito mais com um app acabadinho digno de subir para a google play do que com aquela arquitetura cabulosa copiada da internet (mas a gente lê código também, então capricha).
 
  * Temos alguns itens opcionais que valem pontos extras caso sejam implementados! ;)
+ 
 
 
 ## Requisitos Técnicos:
 
- * O teste preferencialmente tem que seguir a implementação em Kotlin, mas também pode ser implementado em Java.
+ * O teste deve seguir a implementação em Kotlin.
 
  * Para carregamento de imagens deverá usar Picasso.
 
  * Para requisições de endpoints, deverá usar Retrofit e/ou OkHttp.
 
- * O app deverá conter 2 idiomas, 'pt' e 'en'.
-
- * Para armazenar dados locais, deverá usar Realm.
+ * (Sugestão) Para armazenar dados locais, deverá usar Realm.
+ 
+ * (Opcional) O app deverá conter 2 idiomas, 'pt' e 'en'.
 
  * (Opcional) Você deverá criar o app utilizando 2 cores diferentes (Laranja e Ciano) e gerar 2 flavours distintos para rodar as duas versões.
 
 
 ## Tela 1: Feed (Já está implementada)
 
-
+<img width="200" alt="Tela 1: Feed" src="https://i.imgur.com/it0TxDy.png">
 
 Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed
 
@@ -83,7 +88,7 @@ Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed
 
 ## Tela 2: Detalhes da Postagem
 
-
+<img width="200" alt="Tela 2: Detalhes da Postagem" src="https://i.imgur.com/eFvbBnF.png">
 
 Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed/{feedHash} -> feedHash é uma propriedade que veio junto na tela anterior.
 
@@ -164,7 +169,7 @@ Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed/{feedHash} -> feedHash é
 
 ## Tela 3: Detalhes do Perfil
 
-
+<img width="200" alt="Tela 3: Detalhes do Perfil" src="https://i.imgur.com/X57djvJ.png">
 
 Endpoint: GET http://api.tecnonutri.com.br/api/v4/profile/{id}
 
