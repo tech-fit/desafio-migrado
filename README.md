@@ -15,5 +15,6 @@ Se mesmo assim, nada der certo, envie seu teste para tecnologia@tech.fit
 * [.NET](https://github.com/tech-fit/desafio/tree/master/dotnet)
 * [Android](https://github.com/tech-fit/desafio/tree/master/android)
 * [iOS](https://github.com/tech-fit/desafio/tree/master/ios)
-* [Estágio](https://github.com/tech-fit/desafio/tree/master/estagio)
+* [Estágio .NET](https://github.com/tech-fit/desafio/tree/master/estagio)
+* [Estágio Mobile](https://github.com/tech-fit/desafio/tree/master/estagioMobile)
 
