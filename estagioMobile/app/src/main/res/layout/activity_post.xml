@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:padding="32dp"
-        android:text="Aqui deverá aparecer os detalhes do Post!"
+        android:text="Aqui devem aparecer os detalhes do Post!"
         android:textSize="18sp"
         tools:ignore="HardcodedText" />
 

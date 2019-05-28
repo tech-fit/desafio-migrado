@@ -7,7 +7,7 @@
     android:id="@+id/rootProfileLayout">
 
     <TextView
-        android:text="Aqui deverá aparecer o Perfil do usuário com sua lista de Posts!"
+        android:text="Aqui deve aparecer o Perfil do usuário com sua lista de Posts!"
         android:layout_gravity="center"
         android:textSize="18sp"
         android:padding="32dp"
