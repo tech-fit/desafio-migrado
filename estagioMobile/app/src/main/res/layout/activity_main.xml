@@ -5,18 +5,17 @@
               android:layout_height="match_parent"
 android:id="@+id/rootMainLayout">
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-            android:id="@+id/container"
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerMain"
+            android:scrollbars="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            android:layout_height="match_parent" />
 
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </com.baoyz.widget.PullRefreshLayout>
 
 </LinearLayout>

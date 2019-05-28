@@ -15,12 +15,16 @@ import com.example.mobiletest.extensions.getDateFormated
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
+
+//Classe responsável por renderizar cada item do post dentro de uma lista na FeedActivity
+
 class FeedAdapter(
-    private val activity: AppCompatActivity,
-    private val onItemProfileClick: (profile: Profile, post: Post) -> Unit,
-    private val onPostBodyClick: (post: Post) -> Unit
+        private val activity: AppCompatActivity,
+        private val onItemProfileClick: (profile: Profile) -> Unit, //Callback para quando o usuário clicar no cabeçalho do Post
+        private val onPostBodyClick: (post: Post, profile: Profile) -> Unit //Callback para quando o usuário clicar no corpo do Post
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    //Lista de Posts a ser renderizada
     private val postList: MutableList<Post> = mutableListOf()
     private val mealTypeArray: Array<String> = activity.resources.getStringArray(R.array.meal_type_array)
 
@@ -68,20 +72,19 @@ class FeedAdapter(
             holder.likeButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
         }
 
-        Picasso.with(holder.postImageView.context)
+        //Carregamento de imagens por meio de uma URL
+        Picasso.get()
             .load(card.image).placeholder(R.drawable.ic_restaurant_black_24dp)
             .into(holder.postImageView)
 
 
-        Picasso.with(holder.personImageView.context)
+        //Carregamento de imagens por meio de uma URL
+        Picasso.get()
             .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
             .into(holder.personImageView)
 
         holder.cardHeaderLayout.setOnClickListener {
-            onItemProfileClick(
-                profile,
-                card
-            )
+            onItemProfileClick(profile)
         }
 
         holder.likeButton.setOnClickListener {
@@ -96,7 +99,7 @@ class FeedAdapter(
         }
 
         holder.postBodyLayout.setOnClickListener {
-            onPostBodyClick(card)
+            onPostBodyClick(card, profile)
         }
 
     }
@@ -107,6 +110,7 @@ class FeedAdapter(
         notifyDataSetChanged()
     }
 
+    //Classe usada para montar e manter as Views necessárias para exibição do Post
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val personNameTextView: TextView = itemView.findViewById(R.id.personName)
         val personGoalTextView: TextView = itemView.findViewById(R.id.personGoal)

@@ -1,5 +1,7 @@
 package com.example.mobiletest.data
 
+import java.io.Serializable
+
 class Post(
     var feedHash: String,
     var id: Long,
@@ -9,4 +11,4 @@ class Post(
     var energy: Float,
     var mealType: Int,
     var isLiked: Boolean
-)
+) : Serializable

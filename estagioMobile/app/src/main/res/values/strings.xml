@@ -29,4 +29,6 @@
     <string name="feed_load_error">Impossível carregar o feed</string>
     <string name="post_load_error">Impossível carregar os detalhes da publicação</string>
     <string name="mini_post_load_error">Impossível carregar as publicações do usuário</string>
+    <string name="profile">Perfil</string>
+    <string name="post_details">Detalhes do Post</string>
 </resources>
