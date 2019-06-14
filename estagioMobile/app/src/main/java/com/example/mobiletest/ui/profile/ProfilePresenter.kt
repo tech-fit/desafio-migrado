@@ -8,7 +8,7 @@ import retrofit2.Response
 
 
 //Classe repsonsável por fornecer os dados e controlar a lógica para a FeedActivity
-class ProfildPresenter (var id: Long){
+class ProfilePresenter (var id: Long){
     private var p = 0 //Variável que controla a página atual para requisição
     private var t = 0L //Variável que controla a timestamp para requisição
     private var requesting = false //Flag que controla se existe uma requisição em andamento
