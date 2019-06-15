@@ -3,6 +3,9 @@ package com.example.mobiletest.ui.profile
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,7 +15,9 @@ import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
 import com.example.mobiletest.ui.post.PostActivity
 import com.google.android.material.snackbar.Snackbar
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_profile.*
+import kotlinx.android.synthetic.main.item_profile.*
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -48,6 +53,8 @@ class ProfileActivity : AppCompatActivity() {
 
 
         presenter = ProfilePresenter(profile.id)
+
+        bindProfileInfos(profile)
 
         adapter = ProfileAdapter(this,
             onPostBodyClick = { post->
@@ -117,6 +124,20 @@ class ProfileActivity : AppCompatActivity() {
             actionBar.setDisplayHomeAsUpEnabled(true)
             actionBar.setDisplayShowHomeEnabled(true)
         }
+    }
+
+    private fun bindProfileInfos(profile: Profile){
+        val name: TextView = findViewById(R.id.nameTextView)
+        val goal: TextView = findViewById(R.id.generalGoalTextView)
+        val image: ImageView = findViewById(R.id.personProfileImage)
+
+        name.text = profile.name
+        goal.text = profile.generalGoal
+        Picasso.get()
+            .load(profile.image).placeholder(R.drawable.ic_restaurant_black_24dp)
+            .into(image)
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
