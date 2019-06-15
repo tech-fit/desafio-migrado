@@ -46,62 +46,57 @@ class ProfileActivity : AppCompatActivity() {
             profile = extras.getSerializable(PROFILE_EXTRAS) as Profile
         }
 
-        if (::profile.isInitialized){
 
-            presenter = ProfilePresenter(profile.id)
+        presenter = ProfilePresenter(profile.id)
 
-            adapter = ProfileAdapter(this,
-                onPostBodyClick = { post->
-                    goToPostDetailsActivity(post)
+        adapter = ProfileAdapter(this,
+            onPostBodyClick = { post->
+                goToPostDetailsActivity(post)
+            }
+        )
+
+        //Configuração da Lista que receberá os Posts
+        recyclerProfile.layoutManager = GridLayoutManager(this, 3)
+        recyclerProfile.adapter = adapter
+
+        //Listener para saber se a lista está proxima do fim e assim carregar mais Posts
+        recyclerProfile.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val layoutManager = recyclerView.layoutManager as GridLayoutManager
+                val totalItemCount = layoutManager.itemCount
+                val lastVisible = layoutManager.findLastVisibleItemPosition()
+
+                //Carrega mais Posts na lista se o último Post visível estiver entre os 5 últimos da lista atual
+                val endHasBeenReached = lastVisible + 5 >= totalItemCount
+                if (totalItemCount > 0 && endHasBeenReached) {
+                    geMorePosts()
                 }
-            )
-
-            //Configuração da Lista que receberá os Posts
-            recyclerProfile.layoutManager = GridLayoutManager(this, 3)
-            recyclerProfile.adapter = adapter
-
-            //Listener para saber se a lista está proxima do fim e assim carregar mais Posts
-            recyclerProfile.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                    super.onScrolled(recyclerView, dx, dy)
-
-                    val layoutManager = recyclerView.layoutManager as GridLayoutManager
-                    val totalItemCount = layoutManager.itemCount
-                    val lastVisible = layoutManager.findLastVisibleItemPosition()
-
-                    //Carrega mais Posts na lista se o último Post visível estiver entre os 5 últimos da lista atual
-                    val endHasBeenReached = lastVisible + 5 >= totalItemCount
-                    if (totalItemCount > 0 && endHasBeenReached) {
-                        geMorePosts()
-                    }
-                }
-            })
-
-            onGetPostsSuccess = { feed: Feed ->
-                showLoading(false)
-                adapter.updatePosts(feed.items, true)
             }
+        })
 
-            onGetMorePostsSuccess = { feed: Feed ->
-                showLoading(false)
-                adapter.updatePosts(feed.items, false)
-            }
-
-            onGetPostsError = {
-                showLoading(false)
-                showMessage(resources.getString(R.string.feed_load_error))
-            }
-
-            getInitialPosts()
-
-            swipeContainer.setOnRefreshListener {
-                adapter.updatePosts(mutableListOf(), true)
-                getInitialPosts()
-            }
-
+        onGetPostsSuccess = { feed: Feed ->
+            showLoading(false)
+            adapter.updatePosts(feed.items, true)
         }
 
+        onGetMorePostsSuccess = { feed: Feed ->
+            showLoading(false)
+            adapter.updatePosts(feed.items, false)
+        }
 
+        onGetPostsError = {
+            showLoading(false)
+            showMessage(resources.getString(R.string.feed_load_error))
+        }
+
+        getInitialPosts()
+
+        swipeContainer.setOnRefreshListener {
+            adapter.updatePosts(mutableListOf(), true)
+            getInitialPosts()
+        }
 
     }
 
