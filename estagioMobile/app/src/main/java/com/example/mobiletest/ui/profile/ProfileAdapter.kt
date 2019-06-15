@@ -9,19 +9,18 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletest.R
 import com.example.mobiletest.data.Post
-import com.example.mobiletest.data.Profile
 import com.squareup.picasso.Picasso
 
 class ProfileAdapter(
     private val activity: AppCompatActivity,
-    private val onPostBodyClick: (profile: Profile) -> Unit//Callback para quando o usuário clicar no corpo do Post
+    private val onPostBodyClick: (post: Post) -> Unit//Callback para quando o usuário clicar no corpo do Post
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     //Lista de Posts a ser renderizada
     private val postList: MutableList<Post> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        val postView = LayoutInflater.from(activity).inflate(R.layout.item_profile, parent, false)
+        val postView = LayoutInflater.from(parent.context).inflate(R.layout.item_profile, parent, false)
         return PostViewHolder(postView)
     }
 
@@ -31,7 +30,6 @@ class ProfileAdapter(
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
         val card = postList[position]
-        val profile = card.profile
 
         val holder = viewHolder as PostViewHolder
 
@@ -42,7 +40,7 @@ class ProfileAdapter(
 
 
         holder.cardHeaderLayout.setOnClickListener {
-            onPostBodyClick(profile)
+            onPostBodyClick(card)
         }
     }
 

@@ -99,6 +99,10 @@ class FeedActivity : AppCompatActivity() {
 
     private fun goToProfileActivity(profile: Profile) {
         val postIntent = Intent(this, ProfileActivity::class.java)
+        val bundle = Bundle()
+
+        //Passagem de parâmetro entre activities
+        bundle.putSerializable(ProfileActivity.PROFILE_EXTRAS, profile)
         startActivity(postIntent)
     }
 
