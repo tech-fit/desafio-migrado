@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/foodDescriptionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Nome do Alimento"
+            android:textColor="@color/textDarkPrimary"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:textSize="18sp"
+            android:layout_marginStart="16dp"
+    />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <TextView
+                android:id="@+id/foodAmountText"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                tools:text="xxxx"
+                android:textColor="@color/textDarkSecondary"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:layout_marginStart="16dp"
+        />
+
+        <TextView
+                android:id="@+id/foodMeasureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Unidade de medida"
+                android:textColor="@color/textDarkSecondary"
+                android:maxLines="1"
+                android:textSize="18sp"
+
+        />
+
+        <TextView
+                android:id="@+id/foodWeightText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="(xxxx g)"
+                android:textColor="@color/textDarkSecondary"
+                android:maxLines="1"
+                android:textSize="18sp"
+                android:layout_marginLeft="10dp"
+        />
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/textDarkSecondary"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Cal"
+                    android:textColor="@color/textDarkPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="60dp"
+            />
+
+            <TextView
+                    android:id="@+id/foodEnergyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="xxx kcal"
+                    android:textColor="@color/textDarkSecondary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="40dp"
+            />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Carb"
+                    android:textColor="@color/textDarkPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="50dp"
+            />
+
+            <TextView
+                    android:id="@+id/foodCarbohydrateText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="xxx g"
+                    android:textColor="@color/textDarkSecondary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="50dp"
+            />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Prot"
+                    android:textColor="@color/textDarkPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="50dp"
+            />
+
+            <TextView
+                    android:id="@+id/foodProteinText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="xxx g"
+                    android:textColor="@color/textDarkSecondary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="50dp"
+            />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Gord"
+                    android:textColor="@color/textDarkPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="50dp"
+            />
+
+            <TextView
+                    android:id="@+id/foodFatText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="xxx g"
+                    android:textColor="@color/textDarkSecondary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="50dp"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/textDarkSecondary"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"/>
+
+
+</LinearLayout>
