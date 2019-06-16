@@ -65,6 +65,15 @@ class PostActivity : AppCompatActivity() {
             goToProfileActivity(profile)
         }
 
+        likeBtn.setOnClickListener{
+            if(!post.isLiked){
+                likeBtn.setImageResource(R.drawable.ic_favorite_red_24dp)
+            }
+            else{
+                likeBtn.setImageResource(R.drawable.ic_favorite_border_white_24dp)
+            }
+        }
+
         adapter = PostAdapter(this)
 
         //Configuração da Lista que receberá as Foods
