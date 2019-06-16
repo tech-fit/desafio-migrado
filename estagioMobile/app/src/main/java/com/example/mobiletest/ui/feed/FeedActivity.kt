@@ -16,6 +16,11 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class FeedActivity : AppCompatActivity() {
 
+    companion object {
+        const val POST_EXTRAS = "postExtras"
+        const val PROFILE_EXTRAS = "profileExtras"
+    }
+
     //Repsonsável por fornecer os dados e controlar a lógica para a Activity
     private val presenter = FeedPresenter()
 
@@ -93,8 +98,8 @@ class FeedActivity : AppCompatActivity() {
         val bundle = Bundle()
 
         //Passagem de parâmetro entre activities
-        bundle.putSerializable(PostActivity.POST_EXTRAS, post)
-        bundle.putSerializable(PostActivity.PROFILE_EXTRAS, profile)
+        bundle.putSerializable(POST_EXTRAS, post)
+        bundle.putSerializable(PROFILE_EXTRAS, profile)
         postIntent.putExtras(bundle)
         startActivity(postIntent)
     }

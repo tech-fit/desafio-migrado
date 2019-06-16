@@ -57,8 +57,8 @@ class ProfileActivity : AppCompatActivity() {
         bindProfileInfos(profile = profile)
 
         adapter = ProfileAdapter(this,
-            onPostBodyClick = { post->
-                goToPostDetailsActivity(post)
+            onPostBodyClick = { post, profile->
+                goToPostDetailsActivity(post, profile)
             }
         )
 
@@ -107,13 +107,14 @@ class ProfileActivity : AppCompatActivity() {
 
     }
 
-    private fun goToPostDetailsActivity(post: Post) {
+    private fun goToPostDetailsActivity(post: Post, profile: Profile) {
 
         val postIntent = Intent(this, PostActivity::class.java)
         val bundle = Bundle()
 
         //Passagem de parâmetro entre activities
         bundle.putSerializable(POST_EXTRAS, post)
+        bundle.putSerializable(PROFILE_EXTRAS, profile)
         startActivity(postIntent)
     }
 

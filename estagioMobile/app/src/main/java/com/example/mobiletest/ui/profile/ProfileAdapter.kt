@@ -9,11 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletest.R
 import com.example.mobiletest.data.Post
+import com.example.mobiletest.data.Profile
 import com.squareup.picasso.Picasso
 
 class ProfileAdapter(
     private val activity: AppCompatActivity,
-    private val onPostBodyClick: (post: Post) -> Unit//Callback para quando o usuário clicar no corpo do Post
+    private val onPostBodyClick: (post: Post, profile: Profile) -> Unit//Callback para quando o usuário clicar no corpo do Post
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     //Lista de Posts a ser renderizada
@@ -40,7 +41,7 @@ class ProfileAdapter(
 
 
         holder.cardHeaderLayout.setOnClickListener {
-            onPostBodyClick(card)
+            onPostBodyClick(card, card.profile)
         }
     }
 

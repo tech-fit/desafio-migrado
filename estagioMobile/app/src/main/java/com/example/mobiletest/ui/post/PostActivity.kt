@@ -1,5 +1,6 @@
 package com.example.mobiletest.ui.post
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
@@ -12,6 +13,7 @@ import com.example.mobiletest.R
 import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
 import com.example.mobiletest.extensions.getDateFormated
+import com.example.mobiletest.ui.profile.ProfileActivity
 import com.example.mobiletest.ui.profile.ProfileAdapter
 import com.example.mobiletest.ui.profile.ProfilePresenter
 import com.google.android.material.snackbar.Snackbar
@@ -58,6 +60,10 @@ class PostActivity : AppCompatActivity() {
         profilePresenter = ProfilePresenter(id = profile.id)
 
         bindPostInfos(profile, post)
+
+        cardHeaderLayout.setOnClickListener {
+            goToProfileActivity(profile)
+        }
 
         adapter = PostAdapter(this)
 
@@ -159,8 +165,17 @@ class PostActivity : AppCompatActivity() {
         else
             totalFat.text = "XXX g"
 
+    }
 
+    private fun goToProfileActivity(profile: Profile){
+        val postIntent = Intent(this, ProfileActivity::class.java)
+        val bundle = Bundle()
 
+        //Passagem de parâmetro entre activities
+        bundle.putSerializable(PROFILE_EXTRAS, profile)
+        postIntent.putExtras(bundle)
+
+        startActivity(postIntent)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
