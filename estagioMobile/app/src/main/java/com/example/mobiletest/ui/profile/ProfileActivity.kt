@@ -30,7 +30,6 @@ class ProfileActivity : AppCompatActivity() {
         const val PROFILE_EXTRAS = "profileExtras"
     }
 
-
     private lateinit var onGetPostsSuccess: (Feed) -> Unit
     private lateinit var onGetMorePostsSuccess: (feed: Feed) -> Unit
     private lateinit var onGetPostsError: () -> Unit
@@ -114,7 +113,7 @@ class ProfileActivity : AppCompatActivity() {
 
         //Passagem de parâmetro entre activities
         bundle.putSerializable(POST_EXTRAS, post)
-        bundle.putSerializable(PROFILE_EXTRAS, profile)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 

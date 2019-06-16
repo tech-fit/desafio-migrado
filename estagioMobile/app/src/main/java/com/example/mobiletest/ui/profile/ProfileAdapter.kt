@@ -30,18 +30,19 @@ class ProfileAdapter(
     }
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
-        val card = postList[position]
+        val post = postList[position]
 
         val holder = viewHolder as PostViewHolder
 
         //Carregamento de imagens por meio de uma URL
         Picasso.get()
-            .load(card.image).placeholder(R.drawable.ic_restaurant_black_24dp)
+            .load(post.image).placeholder(R.drawable.ic_restaurant_black_24dp)
             .into(holder.postImageView)
 
 
         holder.cardHeaderLayout.setOnClickListener {
-            onPostBodyClick(card, card.profile)
+            onPostBodyClick(post, post.profile)
+            println("Post:  "+post+"")
         }
     }
 

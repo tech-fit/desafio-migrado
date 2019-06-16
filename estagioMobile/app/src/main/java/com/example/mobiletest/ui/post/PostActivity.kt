@@ -48,53 +48,58 @@ class PostActivity : AppCompatActivity() {
 
         val extras = intent.extras
 
-        if (extras != null && extras.containsKey(POST_EXTRAS) && extras.containsKey(PROFILE_EXTRAS)) {
+        if (extras != null && extras.containsKey(POST_EXTRAS)) {
             //Recuperar parâmetro passado entre activities
             post = extras.getSerializable(POST_EXTRAS) as Post
-            profile = extras.getSerializable(PROFILE_EXTRAS) as Profile
+            profile = post.profile
+
+            postPresenter = PostPresenter(feedHash = post.feedHash)
+            profilePresenter = ProfilePresenter(id = profile.id)
+
+            bindPostInfos(profile, post)
+
+            cardHeaderLayout.setOnClickListener {
+                goToProfileActivity(profile)
+            }
+
+            likeBtn.setOnClickListener{
+                if(!post.isLiked){
+                    likeBtn.setImageResource(R.drawable.ic_favorite_red_24dp)
+                    post.isLiked = true
+                }
+                else{
+                    likeBtn.setImageResource(R.drawable.ic_favorite_border_white_24dp)
+                    post.isLiked = false
+                }
+            }
+
+            adapter = PostAdapter(this)
+
+            //Configuração da Lista que receberá as Foods
+            recyclerFoods.layoutManager = LinearLayoutManager(this)
+            recyclerFoods.adapter = adapter
+
+
+            onGetPostsSuccess = { post: Post ->
+                showLoading(false)
+                adapter.updatePosts(post.foods, true)
+            }
+
+            onGetPostsError = {
+                showLoading(false)
+                showMessage(resources.getString(R.string.feed_load_error))
+            }
+
+            swipeContainer.setOnRefreshListener {
+                adapter.updatePosts(mutableListOf(), true)
+                getPostDetails()
+            }
+
         }
 
         setupToolbar(resources.getString(R.string.post_details))
 
-        postPresenter = PostPresenter(feedHash = post.feedHash)
-        profilePresenter = ProfilePresenter(id = profile.id)
 
-        bindPostInfos(profile, post)
-
-        cardHeaderLayout.setOnClickListener {
-            goToProfileActivity(profile)
-        }
-
-        likeBtn.setOnClickListener{
-            if(!post.isLiked){
-                likeBtn.setImageResource(R.drawable.ic_favorite_red_24dp)
-            }
-            else{
-                likeBtn.setImageResource(R.drawable.ic_favorite_border_white_24dp)
-            }
-        }
-
-        adapter = PostAdapter(this)
-
-        //Configuração da Lista que receberá as Foods
-        recyclerFoods.layoutManager = LinearLayoutManager(this)
-        recyclerFoods.adapter = adapter
-
-
-        onGetPostsSuccess = { post: Post ->
-            showLoading(false)
-            adapter.updatePosts(post.foods, true)
-        }
-
-        onGetPostsError = {
-            showLoading(false)
-            showMessage(resources.getString(R.string.feed_load_error))
-        }
-
-        swipeContainer.setOnRefreshListener {
-            adapter.updatePosts(mutableListOf(), true)
-            getPostDetails()
-        }
 
     }
 
