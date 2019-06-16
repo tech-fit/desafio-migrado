@@ -54,7 +54,7 @@ class ProfileActivity : AppCompatActivity() {
 
         presenter = ProfilePresenter(profile.id)
 
-        bindProfileInfos(profile)
+        bindProfileInfos(profile = profile)
 
         adapter = ProfileAdapter(this,
             onPostBodyClick = { post->
@@ -134,7 +134,7 @@ class ProfileActivity : AppCompatActivity() {
         name.text = profile.name
         goal.text = profile.generalGoal
         Picasso.get()
-            .load(profile.image).placeholder(R.drawable.ic_restaurant_black_24dp)
+            .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
             .into(image)
 
 

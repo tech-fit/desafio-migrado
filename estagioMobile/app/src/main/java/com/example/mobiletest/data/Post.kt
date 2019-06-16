@@ -10,5 +10,9 @@ class Post(
     var date: String,
     var energy: Float,
     var mealType: Int,
-    var isLiked: Boolean
+    var isLiked: Boolean,
+    var totalCarbohydrate: Float,
+    var totalProtein: Float,
+    var totalFat: Float,
+    var foods: MutableList<Food>
 ) : Serializable

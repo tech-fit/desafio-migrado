@@ -154,14 +154,15 @@
 
             </androidx.cardview.widget.CardView>
 
-            <ListView
-                    android:id="@+id/listViewPostDetails"
+            <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerFoods"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-            </ListView>
+            </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
+                    android:id="@+id/labelTotal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:text="TOTAL"
@@ -170,6 +171,7 @@
                     android:maxLines="1"
                     android:textSize="20sp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
 
             />
 
@@ -192,9 +194,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="40dp"
+                >
 
                     <TextView
+                            android:id="@+id/labelCal"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Cal"
@@ -202,7 +207,8 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="60dp"
+                            android:layout_gravity="center_horizontal"
+
                     />
 
                     <TextView
@@ -214,20 +220,23 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="40dp"
+
                     />
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
                         android:layout_marginTop="5dp"
+                        android:layout_marginLeft="40dp"
+
                 >
 
                     <TextView
+                            android:id="@+id/labelCarb"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Carb"
@@ -235,7 +244,7 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="50dp"
+                            android:layout_gravity="center_horizontal"
                     />
 
                     <TextView
@@ -247,19 +256,22 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="50dp"
+
                     />
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="40dp"
+                >
 
                     <TextView
+                            android:id="@+id/labelProt"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Prot"
@@ -267,7 +279,8 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="50dp"
+                            android:layout_gravity="center_horizontal"
+
 
                     />
 
@@ -280,19 +293,21 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="50dp"
                     />
 
 
                 </LinearLayout>
 
                 <LinearLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="40dp"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginTop="5dp">
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="40dp"
+                >
 
                     <TextView
+                            android:id="@+id/labelFat"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Gord"
@@ -300,11 +315,11 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="50dp"
+                            android:layout_gravity="center_horizontal"
                     />
 
                     <TextView
-                            android:id="@+id/foodFatText"
+                            android:id="@+id/foodTotalFatText"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="xxx g"
@@ -312,7 +327,6 @@
                             android:textStyle="bold"
                             android:maxLines="1"
                             android:textSize="16sp"
-                            android:layout_marginLeft="50dp"
 
                     />
 

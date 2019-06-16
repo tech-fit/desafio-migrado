@@ -94,6 +94,7 @@ class FeedActivity : AppCompatActivity() {
 
         //Passagem de parâmetro entre activities
         bundle.putSerializable(PostActivity.POST_EXTRAS, post)
+        bundle.putSerializable(PostActivity.PROFILE_EXTRAS, profile)
         postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
