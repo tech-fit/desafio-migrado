@@ -65,7 +65,7 @@ Cada alimento pode ter medidas como: Colher de sopa, Escumadeira, Xicara. Ex:
 
 
 SGBD pode se utilizar o LocalDB.
-Layout pode se utilizar o template padrão do ASP.NET MVC ou um de sua preferencia.
+Como Layout pode fica a seu critério como ter uma melhor experiência ao criar os alimentos.
 
 # Itens avaliados #
 
