@@ -65,10 +65,12 @@ Cada alimento pode ter medidas como: Colher de sopa, Escumadeira, Xicara. Ex:
 
 
 SGBD pode se utilizar o LocalDB.
+
 Como Layout pode fica a seu critério como ter uma melhor experiência ao criar os alimentos.
 
 # Itens avaliados #
 
+* Qualidade na interface
 * Acesso a dados
 * Validações
 * Testes
