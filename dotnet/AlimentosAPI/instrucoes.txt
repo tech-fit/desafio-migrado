@@ -1,0 +1,47 @@
+* elementos é um termo genérico, que pode ser substituído por alimentos, medidas ou tags
+
+*rotas
+ POST/GET/PUT: api/elementos
+ DELETE: api/elementos/{id}
+ GET(filtro): api/elementos/filter/{filtro}
+
+* Json - Exemplos:
+
+Alimento - POST ou PUT(Nesse caso é necessário add o campo ID)
+
+{
+	'Nome': 'Arroz',
+	'QuantidadeGramas': 100,
+	'Calorias': 128,
+	'Carboidratos': 28.1, 
+	'Proteinas': 2.5,
+	'GordurasTotais': 0.2,
+	'GordurasSaturadas': 0.05,
+	'FibraAlimentar': 1.6,
+	'Sodio': 1,
+	'Medidas':[
+		{
+			'MedidaId': 3,
+			'Quantidade': 30
+		},
+		{
+			'MedidaId': 4,
+			'Quantidade': 200
+		},
+		{
+			'MedidaId': 5,
+			'Quantidade': 25
+		}
+	],
+	'Tags':[
+		{
+			'TagId': 1
+		}
+	]
+}
+
+
+Tag ou medidas - POST ou PUT(Nesse caso é necessário add o campo ID)
+{
+	'Nome': 'ElementoNome'
+}
