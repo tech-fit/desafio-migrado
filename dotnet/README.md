@@ -2,7 +2,7 @@
 
 ## Necessidades
 
-Neste projeto, temos a necessidade de criar um cadastro de Alimentos e uma Web API (REST FULL) que ofereça os dados dos Alimentos que foram cadastrados. As informações servidas pela API serão consumidas por cerca de 400 a 700 devices mobiles no mesmo momento. As áreas de negócio não necessitam que ao atualizar uma informação de um instrumento ela esteja atualizada em realtime para os devices que consomem a API (pode existir alguns minutos para que uma informação nutricional seja atualizada na api).
+Neste projeto, temos a necessidade de criar um admin de cadastro de Alimentos e uma Web API (REST FULL) que ofereça os dados dos Alimentos que foram cadastrados. As informações servidas pela API serão consumidas por cerca de 400 a 700 devices mobiles no mesmo momento. As áreas de negócio não necessitam que ao atualizar uma informação de um instrumento ela esteja atualizada em realtime para os devices que consomem a API (pode existir alguns minutos para que uma informação nutricional seja atualizada na api).
 
 Um Alimento possui algumas características como: 
 
