@@ -17,4 +17,5 @@ Se mesmo assim, nada der certo, envie seu teste para tecnologia@tech.fit
 * [iOS](https://github.com/tech-fit/desafio/tree/master/ios)
 * [Estágio .NET](https://github.com/tech-fit/desafio/tree/master/estagio)
 * [Estágio Mobile](https://github.com/tech-fit/desafio/tree/master/estagioMobile)
+* [Backend RAILS](https://github.com/tech-fit/desafio/tree/master/backend-rails)
 
