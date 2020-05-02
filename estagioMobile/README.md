@@ -31,6 +31,8 @@ Atente para:
 
  * Para requisições de endpoints, deverá usar Retrofit (https://square.github.io/retrofit/) e/ou OkHttp (https://square.github.io/okhttp/).
 
+ * (ATENÇÃO) Um aplicativo pode ter muitos estados, atente-se para: Carregamento, Listas Vazias, Erros, etc.
+
  * (Sugestão) Para armazenar dados locais, poderá usar o próprio shared preferences do Android (https://developer.android.com/training/data-storage/shared-preferences).
  
  * (Opcional) Poder abrir diretamente um post usando as uris testetechfit://feed/{feedHash} e um perfil usando as uris testechfit://profile/{id} (https://developer.android.com/training/app-links/deep-linking).
