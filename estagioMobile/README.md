@@ -42,7 +42,7 @@ Atente para:
 
 <img width="200" alt="Tela 1: Feed" src="https://i.imgur.com/it0TxDy.png">
 
-Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed
+Endpoint: GET http://api.tecnonutri.com.br/api/test/feed
 
 
 ### Comportamento (OK): 
@@ -90,7 +90,7 @@ Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed
 
 <img width="200" alt="Tela 2: Detalhes da Postagem" src="https://i.imgur.com/eFvbBnF.png">
 
-Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed/{feedHash} -> feedHash é uma propriedade que veio junto na tela anterior.
+Endpoint: GET http://api.tecnonutri.com.br/api/test/feed/{feedHash} -> feedHash é uma propriedade que veio junto na tela anterior.
 
 
 ### Comportamento: 
@@ -171,7 +171,7 @@ Endpoint: GET http://api.tecnonutri.com.br/api/v4/feed/{feedHash} -> feedHash é
 
 <img width="200" alt="Tela 3: Detalhes do Perfil" src="https://i.imgur.com/X57djvJ.png">
 
-Endpoint: GET http://api.tecnonutri.com.br/api/v4/profile/{id}
+Endpoint: GET http://api.tecnonutri.com.br/api/test/profile/{id}
 
 
 ### Comportamento: 
