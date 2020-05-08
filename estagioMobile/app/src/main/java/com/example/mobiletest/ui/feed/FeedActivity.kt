@@ -33,12 +33,12 @@ class FeedActivity : AppCompatActivity() {
 
 
         adapter = FeedAdapter(this,
-                onItemProfileClick = { profile ->
-                    goToProfileActivity(profile)
-                },
-                onPostBodyClick = { post, profile ->
-                    goToPostDetailsActivity(post, profile)
-                }
+            onItemProfileClick = { profile ->
+                goToProfileActivity(profile)
+            },
+            onPostBodyClick = { post, profile ->
+                goToPostDetailsActivity(post)
+            }
         )
 
         //Configuração da Lista que receberá os Posts
@@ -58,7 +58,7 @@ class FeedActivity : AppCompatActivity() {
                 //Carrega mais Posts na lista se o último Post visível estiver entre os 5 últimos da lista atual
                 val endHasBeenReached = lastVisible + 5 >= totalItemCount
                 if (totalItemCount > 0 && endHasBeenReached) {
-                    geMorePosts()
+                    getMorePosts()
                 }
             }
         })
@@ -87,7 +87,7 @@ class FeedActivity : AppCompatActivity() {
 
     }
 
-    private fun goToPostDetailsActivity(post: Post, profile: Profile) {
+    private fun goToPostDetailsActivity(post: Post) {
 
         val postIntent = Intent(this, PostActivity::class.java)
         val bundle = Bundle()
@@ -100,6 +100,11 @@ class FeedActivity : AppCompatActivity() {
 
     private fun goToProfileActivity(profile: Profile) {
         val postIntent = Intent(this, ProfileActivity::class.java)
+        val bundle = Bundle()
+
+        //Passagem de parâmetro entre activities
+        bundle.putSerializable(ProfileActivity.PROFILE_EXTRAS, profile)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 
@@ -108,7 +113,7 @@ class FeedActivity : AppCompatActivity() {
         presenter.getPosts(onGetPostsSuccess, onGetPostsError)
     }
 
-    private fun geMorePosts() {
+    private fun getMorePosts() {
         showLoading(true)
         presenter.getMorePosts(onGetMorePostsSuccess, onGetPostsError)
     }

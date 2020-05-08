@@ -27,7 +27,6 @@ class PostActivity : AppCompatActivity() {
 
     companion object {
         const val POST_EXTRAS = "postExtras"
-        const val PROFILE_EXTRAS = "profileExtras"
     }
 
     private lateinit var feedHash: String
@@ -99,6 +98,11 @@ class PostActivity : AppCompatActivity() {
 
     private fun goToProfileActivity(profile: Profile) {
         val postIntent = Intent(this, ProfileActivity::class.java)
+        val bundle = Bundle()
+
+        //Passagem de parâmetro entre activities
+        bundle.putSerializable(ProfileActivity.PROFILE_EXTRAS, profile)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 

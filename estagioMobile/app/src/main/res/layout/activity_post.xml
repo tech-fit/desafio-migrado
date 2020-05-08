@@ -15,10 +15,10 @@
                 android:id="@+id/rv_post"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                tools:itemCount="10"
                 tools:listitem="@layout/food_card"
-                tools:itemCount="3"
-                android:layout_marginBottom="16dp"
-            />
+                android:paddingBottom="8dp"
+                android:clipToPadding="false"/>
     </com.baoyz.widget.PullRefreshLayout>
 
 </FrameLayout>

@@ -45,10 +45,10 @@ class PostAdapter(
     }
 
     override fun getItemCount(): Int {
-        if (post != null) {
+        if (post != null && post!!.foods.size > 0) {
             return post!!.foods.size + 2
         } else {
-            return 0
+            return 1
         }
     }
 
@@ -142,12 +142,15 @@ class PostAdapter(
             }
 
             if (card.amount != 0f && card.measure != null && card.weight != 0f) {
+                holder.foodAmountTextView.visibility = View.VISIBLE
                 holder.foodAmountTextView.text = String.format(
                     activity.getString(R.string.amount_mask),
                     card.amount,
                     card.measure,
                     card.weight
                 )
+            } else {
+                holder.foodAmountTextView.visibility = View.GONE
             }
             holder.calTextView.text = String.format(
                 activity.getString(R.string.kcal_mask),

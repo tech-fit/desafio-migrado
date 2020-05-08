@@ -2,6 +2,7 @@ package com.example.mobiletest.api
 
 import com.example.mobiletest.data.Feed
 import com.example.mobiletest.data.PostDetails
+import com.example.mobiletest.data.ProfileDetails
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -18,5 +19,9 @@ interface EndPointsAPI {
 
     @GET("feed/{feedHash}")
     fun getPostItem(@Path("feedHash") feedHash: String): Call<PostDetails>
+
+
+    @GET("profile/{id}")
+    fun getProfile(@Path("id") id: Long, @Query("p") p: Int?, @Query("t") t: Long?): Call<ProfileDetails>
 
 }
