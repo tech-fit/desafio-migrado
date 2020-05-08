@@ -10,7 +10,9 @@
     <string name="fat_label">Gord</string>
     <string name="food_grams_mask">(%s g)</string>
     <string name="food_summary">Total Consumido</string>
-    <string name="kcal_mask">%s kcal</string>
+    <string name="kcal_mask">%.2f kcal</string>
+    <string name="grams_mask">%.2f g</string>
+    <string name="amount_mask">%s %s (%s g)</string>
 
     <string name="profile_name">Nome do Usuário</string>
     <string name="profile_goal">Objetivo</string>
