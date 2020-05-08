@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletest.R
 import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
+import com.example.mobiletest.extensions.SharedPreference
 import com.example.mobiletest.extensions.getDateFormated
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
@@ -19,14 +20,16 @@ import de.hdodenhof.circleimageview.CircleImageView
 //Classe responsável por renderizar cada item do post dentro de uma lista na FeedActivity
 
 class FeedAdapter(
-        private val activity: AppCompatActivity,
-        private val onItemProfileClick: (profile: Profile) -> Unit, //Callback para quando o usuário clicar no cabeçalho do Post
-        private val onPostBodyClick: (post: Post, profile: Profile) -> Unit //Callback para quando o usuário clicar no corpo do Post
+    private val activity: AppCompatActivity,
+    private val onItemProfileClick: (profile: Profile) -> Unit, //Callback para quando o usuário clicar no cabeçalho do Post
+    private val onPostBodyClick: (post: Post, profile: Profile) -> Unit //Callback para quando o usuário clicar no corpo do Post
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     //Lista de Posts a ser renderizada
     private val postList: MutableList<Post> = mutableListOf()
-    private val mealTypeArray: Array<String> = activity.resources.getStringArray(R.array.meal_type_array)
+    private val mealTypeArray: Array<String> =
+        activity.resources.getStringArray(R.array.meal_type_array)
+    private val sharedPreference: SharedPreference = SharedPreference(activity)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val postView = LayoutInflater.from(activity).inflate(R.layout.item_card, parent, false)
@@ -66,7 +69,7 @@ class FeedAdapter(
         holder.postTimeTextView.text = card.date.getDateFormated()
         holder.mealTypeTextView.text = mealTypeArray[card.mealType]
 
-        if (card.isLiked) {
+        if (sharedPreference.isLiked(card.id)) {
             holder.likeButton.setImageResource(R.drawable.ic_favorite_red_24dp)
         } else {
             holder.likeButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
@@ -88,14 +91,12 @@ class FeedAdapter(
         }
 
         holder.likeButton.setOnClickListener {
-            if (card.isLiked) {
-                card.isLiked = false
+            if (sharedPreference.isLiked(card.id)) {
                 holder.likeButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
-
             } else {
-                card.isLiked = true
                 holder.likeButton.setImageResource(R.drawable.ic_favorite_red_24dp)
             }
+            sharedPreference.like(card.id)
         }
 
         holder.postBodyLayout.setOnClickListener {
@@ -104,8 +105,10 @@ class FeedAdapter(
 
     }
 
-    fun updatePosts(posts: MutableList<Post>, clear: Boolean){
-        if (clear) { this.postList.clear() }
+    fun updatePosts(posts: MutableList<Post>, clear: Boolean) {
+        if (clear) {
+            this.postList.clear()
+        }
         this.postList.addAll(posts)
         notifyDataSetChanged()
     }

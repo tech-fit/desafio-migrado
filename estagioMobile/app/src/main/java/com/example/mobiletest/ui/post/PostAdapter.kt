@@ -12,6 +12,7 @@ import com.example.mobiletest.R
 import com.example.mobiletest.data.Food
 import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
+import com.example.mobiletest.extensions.SharedPreference
 import com.example.mobiletest.extensions.getDateFormated
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
@@ -33,6 +34,8 @@ class PostAdapter(
     private var post: Post? = null
     private val mealTypeArray: Array<String> =
         activity.resources.getStringArray(R.array.meal_type_array)
+    private val sharedPreference:SharedPreference = SharedPreference(activity)
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         if (viewType == TYPE_ITEM) {
@@ -88,7 +91,7 @@ class PostAdapter(
             holder.postTimeTextView.text = post!!.date.getDateFormated()
             holder.mealTypeTextView.text = mealTypeArray[post!!.mealType]
 
-            if (post!!.isLiked) {
+            if (sharedPreference.isLiked(post!!.id)) {
                 holder.likeButton.setImageResource(R.drawable.ic_favorite_red_24dp)
             } else {
                 holder.likeButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
@@ -110,14 +113,12 @@ class PostAdapter(
             }
 
             holder.likeButton.setOnClickListener {
-                if (post!!.isLiked) {
-                    post!!.isLiked = false
+                if (sharedPreference.isLiked(post!!.id)) {
                     holder.likeButton.setImageResource(R.drawable.ic_favorite_border_white_24dp)
-
                 } else {
-                    post!!.isLiked = true
                     holder.likeButton.setImageResource(R.drawable.ic_favorite_red_24dp)
                 }
+                sharedPreference.like(post!!.id)
             }
         } else if (viewHolder is PostItemViewHolder && post != null) {
             var card: Food? = null

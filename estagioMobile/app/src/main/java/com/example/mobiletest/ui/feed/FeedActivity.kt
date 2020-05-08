@@ -87,6 +87,11 @@ class FeedActivity : AppCompatActivity() {
 
     }
 
+    override fun onPostResume() {
+        super.onPostResume()
+        adapter.notifyDataSetChanged()
+    }
+
     private fun goToPostDetailsActivity(post: Post) {
 
         val postIntent = Intent(this, PostActivity::class.java)
