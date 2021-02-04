@@ -31,14 +31,16 @@ class PostAdapter(
 
         holder.foodNameTextView.text = card.description
         holder.foodAmountTextView.text = card.amount.toString().plus(" ").plus(card.measure).plus(" de ").plus(card.description).plus(" (").plus(card.weight.toString()).plus(" g)")
-        holder.foodCalQuantityTextView.text = card.energy.toString().plus(" kcal")
-        holder.foodCarbQuantityTextView.text = card.carbohydrate.toString().plus(" g")
-        holder.foodProtQuantityTextView.text = card.protein.toString().plus(" g")
-        holder.foodGordQuantityTextView.text = card.fat.toString().plus(" g")
+        holder.foodCalQuantityTextView.text = card.energy.round().toString().plus(" kcal")
+        holder.foodCarbQuantityTextView.text = card.carbohydrate.round().toString().plus(" g")
+        holder.foodProtQuantityTextView.text = card.protein.round().toString().plus(" g")
+        holder.foodGordQuantityTextView.text = card.fat.round().toString().plus(" g")
     }
 
-    fun updateFoods(foods: MutableList<Food>){
-        this.foodList.clear()
+    fun Float.round(decimals: Int = 2): Float = "%.${decimals}f".format(this).toFloat()
+
+    fun updateFoods(foods: MutableList<Food>, clear: Boolean){
+        if (clear){ this.foodList.clear() }
         this.foodList.addAll(foods)
         notifyDataSetChanged()
     }

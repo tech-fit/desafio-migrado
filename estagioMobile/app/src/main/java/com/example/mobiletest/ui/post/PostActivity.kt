@@ -12,10 +12,14 @@ import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
 import com.example.mobiletest.extensions.getDateFormated
 import com.example.mobiletest.ui.profile.ProfileActivity
+import com.google.android.material.snackbar.Snackbar
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_post.*
+import kotlinx.android.synthetic.main.activity_post.swipeContainer
 import org.w3c.dom.Text
+import java.text.DecimalFormat
 
 class PostActivity : AppCompatActivity() {
 
@@ -51,10 +55,13 @@ class PostActivity : AppCompatActivity() {
         recyclerPost.adapter = adapter
 
         onGetPostsSuccess = { post: Post ->
-            adapter.updateFoods(post.foods)
+            showLoading(false)
+            adapter.updateFoods(post.foods, true)
         }
 
         onGetPostsError = {
+            showLoading(false)
+            showMessage(resources.getString(R.string.post_load_error))
         }
 
         showProfile(post.profile)
@@ -62,6 +69,11 @@ class PostActivity : AppCompatActivity() {
         showTotalNutrients(post)
 
         getInitialPosts()
+
+        swipeContainer.setOnRefreshListener {
+            adapter.updateFoods(mutableListOf(), true)
+            getInitialPosts()
+        }
 
     }
 
@@ -94,13 +106,15 @@ class PostActivity : AppCompatActivity() {
         val mealTypeTextView = findViewById<TextView>(R.id.mealTypeTextView)
         val postTimestamp = findViewById<TextView>(R.id.postTimestamp)
 
-        totalFoodEnergyQuantity.text = post.energy.toString().plus(" kcal")
-        totalFoodCarbQuantity.text = post.carbohydrate.toString().plus(" g")
-        totalProtQuantity.text = post.protein.toString().plus(" g")
-        totalFatQuantity.text = post.fat.toString().plus(" g")
+        totalFoodEnergyQuantity.text = post.energy.round().toString().plus(" kcal")
+        totalFoodCarbQuantity.text = post.carbohydrate.round().toString().plus(" g")
+        totalProtQuantity.text = post.protein.round().toString().plus(" g")
+        totalFatQuantity.text = post.fat.round().toString().plus(" g")
         mealTypeTextView.text = mealTypeArray[post.mealType]
         postTimestamp.text = post.date.getDateFormated()
     }
+
+    fun Float.round(decimals: Int = 2): Float = "%.${decimals}f".format(this).toFloat()
 
     fun showProfile(profile: Profile){
         val personName = findViewById<TextView>(R.id.personName)
@@ -127,4 +141,13 @@ class PostActivity : AppCompatActivity() {
     private fun getInitialPosts() {
         presenter.getPostDetail(onGetPostsSuccess, onGetPostsError, post.feedHash)
     }
+
+    private fun showLoading(show: Boolean) {
+        swipeContainer.setRefreshing(show)
+    }
+
+    private fun showMessage(message: String) {
+        Snackbar.make(rootMainLayout, message, Snackbar.LENGTH_LONG).show()
+    }
+
 }

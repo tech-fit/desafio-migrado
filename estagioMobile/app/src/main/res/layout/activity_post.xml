@@ -6,212 +6,219 @@
     tools:context=".ui.post.PostActivity"
     android:id="@+id/rootPostLayout">
 
-    <androidx.core.widget.NestedScrollView
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/cardHeaderLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginEnd="8dp"
-                android:layout_gravity="center">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/personProfileImage"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_margin ="8dp"
-                    android:src="@drawable/ic_account_circle_black_24dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center_vertical"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/personName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="Nome do Autor"
-                        android:textColor="@color/textDarkPrimary"
-                        android:textStyle="bold"
-                        android:maxLines="1"
-                        android:textSize="18sp"
-                        android:ellipsize="end"/>
-
-                    <TextView
-                        android:id="@+id/personObjective"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="Objetivo"
-                        android:textColor="@color/textDarkSecondary"
-                        android:maxLines="1"
-                        android:textSize="14sp"/>
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/postBodyLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <FrameLayout
+                <LinearLayout
+                    android:id="@+id/cardHeaderLayout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginEnd="8dp"
+                    android:layout_gravity="center">
 
-                    <RelativeLayout
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/personProfileImage"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_margin ="8dp"
+                        android:src="@drawable/ic_account_circle_black_24dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/personName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Nome do Autor"
+                            android:textColor="@color/textDarkPrimary"
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:textSize="18sp"
+                            android:ellipsize="end"/>
+
+                        <TextView
+                            android:id="@+id/personObjective"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            tools:text="Objetivo"
+                            android:textColor="@color/textDarkSecondary"
+                            android:maxLines="1"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/postBodyLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
                         android:layout_width="match_parent"
-                        android:layout_height="200dp">
+                        android:layout_height="wrap_content">
 
-                        <FrameLayout
+                        <RelativeLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                            android:layout_height="200dp">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/postPhoto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/ic_restaurant_black_24dp"
+                                    android:scaleType="centerCrop"/>
+
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/trending_gradiente_shape"/>
+
+                            </FrameLayout>
+
+                            <TextView
+                                android:id="@+id/mealTypeTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginStart="16dp"
+                                android:layout_marginBottom="12dp"/>
+
+                            <TextView
+                                android:id="@+id/postTimestamp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_toEndOf="@id/mealTypeTextView"
+                                android:layout_marginStart="4dp"
+                                android:layout_marginBottom="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/white"
+                                android:layout_alignParentBottom="true"/>
 
                             <ImageView
-                                android:id="@+id/postPhoto"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/ic_restaurant_black_24dp"
-                                android:scaleType="centerCrop"/>
+                                android:id="@+id/likeBtn"
+                                android:layout_width="34dp"
+                                android:layout_height="34dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_margin="12dp"
+                                android:src="@drawable/ic_favorite_border_white_24dp"
+                                android:layout_alignParentBottom="true"
+                                android:elevation="2dp"/>
 
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/trending_gradiente_shape"/>
+                        </RelativeLayout>
 
-                        </FrameLayout>
+                    </FrameLayout>
 
-                        <TextView
-                            android:id="@+id/mealTypeTextView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="16sp"
-                            android:textColor="@color/white"
-                            android:layout_alignParentBottom="true"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginBottom="12dp"/>
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/postTimestamp"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_toEndOf="@id/mealTypeTextView"
-                            android:layout_marginStart="4dp"
-                            android:layout_marginBottom="12dp"
-                            android:textSize="16sp"
-                            android:textColor="@color/white"
-                            android:layout_alignParentBottom="true"/>
-
-                        <ImageView
-                            android:id="@+id/likeBtn"
-                            android:layout_width="34dp"
-                            android:layout_height="34dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_margin="12dp"
-                            android:src="@drawable/ic_favorite_border_white_24dp"
-                            android:layout_alignParentBottom="true"
-                            android:elevation="2dp"/>
-
-                    </RelativeLayout>
-
-                </FrameLayout>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerPost"
-                android:scrollbars="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:text="Total"
-                    android:textColor="@color/textDarkPrimary"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:textSize="18sp"/>
-
-                <View style="@style/DividerTop"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerPost"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
 
                     <TextView
-                        android:text="Cal"
-                        style="@style/nutritionBold"
-                        />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Total"
+                        android:textColor="@color/textDarkPrimary"
+                        android:textStyle="bold"
+                        android:maxLines="1"
+                        android:textSize="18sp"/>
 
-                    <TextView
-                        android:text="Carb"
-                        style="@style/nutritionBold"
-                        />
+                    <View style="@style/DividerTop"/>
 
-                    <TextView
-                        android:text="Prot"
-                        style="@style/nutritionBold"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:text="Gord"
-                        style="@style/nutritionBold"/>
+                        <TextView
+                            android:text="Cal"
+                            style="@style/nutritionBold"
+                            />
 
-                </LinearLayout>
+                        <TextView
+                            android:text="Carb"
+                            style="@style/nutritionBold"
+                            />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                        <TextView
+                            android:text="Prot"
+                            style="@style/nutritionBold"/>
 
-                    <TextView
-                        android:id="@+id/totalFoodEnergyQuantity"
-                        tools:text="xxx kcal"
-                        style="@style/nutritionQuantity"/>
+                        <TextView
+                            android:text="Gord"
+                            style="@style/nutritionBold"/>
 
-                    <TextView
-                        android:id="@+id/totalFoodCarbQuantity"
-                        tools:text="xxx g"
-                        style="@style/nutritionQuantity"/>
+                    </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/totalFoodProtQuantity"
-                        tools:text="xxx g"
-                        style="@style/nutritionQuantity"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/totalFoodFatQuantity"
-                        tools:text="xxx g"
-                        style="@style/nutritionQuantity"/>
+                        <TextView
+                            android:id="@+id/totalFoodEnergyQuantity"
+                            tools:text="xxx kcal"
+                            style="@style/nutritionQuantity"/>
+
+                        <TextView
+                            android:id="@+id/totalFoodCarbQuantity"
+                            tools:text="xxx g"
+                            style="@style/nutritionQuantity"/>
+
+                        <TextView
+                            android:id="@+id/totalFoodProtQuantity"
+                            tools:text="xxx g"
+                            style="@style/nutritionQuantity"/>
+
+                        <TextView
+                            android:id="@+id/totalFoodFatQuantity"
+                            tools:text="xxx g"
+                            style="@style/nutritionQuantity"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
 
-    </androidx.core.widget.NestedScrollView>
+    </com.baoyz.widget.PullRefreshLayout>
 
 </FrameLayout>
