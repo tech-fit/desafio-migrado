@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:cardCornerRadius="5dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginStart="8dp"
-    android:layout_marginEnd="8dp">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,15 +38,49 @@
                     android:maxLines="1"
                     android:textSize="18sp"
                     android:ellipsize="end"/>
-
-                <TextView
-                    android:id="@+id/foodQuantity"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text="xxx Colher de Arroz (xxx g)"
-                    android:textColor="@color/textDarkSecondary"
-                    android:maxLines="1"
-                    android:textSize="14sp"/>
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/foodAmount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="xxx "
+                        android:textColor="@color/textDarkSecondary"
+                        android:maxLines="1"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/foodMeasure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="colher de "
+                        android:textColor="@color/textDarkSecondary"
+                        android:maxLines="1"
+                        android:textSize="14sp"/>
+                    <TextView
+                        android:id="@+id/foodDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="arroz "
+                        android:textColor="@color/textDarkSecondary"
+                        android:maxLines="1"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/foodWeight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="(100g)"
+                        android:textColor="@color/textDarkSecondary"
+                        android:maxLines="1"
+                        android:textSize="14sp"/>
+
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -69,19 +100,19 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    tools:text="Cal"
+                    android:text="Cal"
                     style="@style/nutritionBold"/>
 
                 <TextView
-                    tools:text="Carb"
+                    android:text="Carb"
                     style="@style/nutritionBold"/>
 
                 <TextView
-                    tools:text="Prot"
+                    android:text="Prot"
                     style="@style/nutritionBold"/>
 
                 <TextView
-                    tools:text="Gord"
+                    android:text="Gord"
                     style="@style/nutritionBold"/>
 
             </LinearLayout>
@@ -119,4 +150,4 @@
 
     </LinearLayout>
 
-</androidx.cardview.widget.CardView>
+</LinearLayout>

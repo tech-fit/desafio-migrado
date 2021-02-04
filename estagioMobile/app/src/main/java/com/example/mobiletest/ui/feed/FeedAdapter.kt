@@ -113,7 +113,7 @@ class FeedAdapter(
     //Classe usada para montar e manter as Views necessárias para exibição do Post
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val personNameTextView: TextView = itemView.findViewById(R.id.foodName)
-        val personGoalTextView: TextView = itemView.findViewById(R.id.foodQuantity)
+        val personGoalTextView: TextView = itemView.findViewById(R.id.foodAmount)
         val personImageView: CircleImageView = itemView.findViewById(R.id.personProfileImage)
         val cardHeaderLayout: LinearLayout = itemView.findViewById(R.id.cardHeaderLayout)
         val postImageView: ImageView = itemView.findViewById(R.id.postPhoto)

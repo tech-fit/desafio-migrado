@@ -32,7 +32,7 @@
                 android:ellipsize="end"/>
 
             <TextView
-                android:id="@+id/foodQuantity"
+                android:id="@+id/foodAmount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"

@@ -6,6 +6,10 @@
     tools:context=".ui.post.PostActivity"
     android:id="@+id/rootPostLayout">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -130,22 +134,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginBottom="10dp"
-                    tools:text="Total"
-                    android:textColor="@color/textDarkPrimary"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:textSize="18sp"
-                    android:ellipsize="end"/>
-
-                <View style="@style/DividerTop"/>
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -153,31 +141,42 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Total"
+                    android:textColor="@color/textDarkPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="18sp"/>
+
+                <View style="@style/DividerTop"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/totalFoodCal"
-                        tools:text="Cal"
+                        android:text="Cal"
                         style="@style/nutritionBold"
                         />
 
                     <TextView
-                        android:id="@+id/totalFoodCarb"
-                        tools:text="Carb"
+                        android:text="Carb"
                         style="@style/nutritionBold"
                         />
 
                     <TextView
-                        android:id="@+id/totalFoodProt"
-                        tools:text="Prot"
+                        android:text="Prot"
                         style="@style/nutritionBold"/>
 
                     <TextView
-                        android:id="@+id/totalFoodGord"
-                        tools:text="Gord"
+                        android:text="Gord"
                         style="@style/nutritionBold"/>
 
                 </LinearLayout>
@@ -188,7 +187,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/totalFoodCalQuantity"
+                        android:id="@+id/totalFoodEnergyQuantity"
                         tools:text="xxx kcal"
                         style="@style/nutritionQuantity"/>
 
@@ -203,7 +202,7 @@
                         style="@style/nutritionQuantity"/>
 
                     <TextView
-                        android:id="@+id/totalFoodGordQuantity"
+                        android:id="@+id/totalFoodFatQuantity"
                         tools:text="xxx g"
                         style="@style/nutritionQuantity"/>
 
@@ -212,5 +211,7 @@
             </LinearLayout>
 
         </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

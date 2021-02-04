@@ -7,9 +7,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletest.data.Food
-import com.example.mobiletest.data.Profile
 import com.example.mobiletest.R
-import com.example.mobiletest.data.Post
+import org.w3c.dom.Text
 
 class PostAdapter(
         private val activity: AppCompatActivity
@@ -31,11 +30,11 @@ class PostAdapter(
         val holder = viewHolder as FoodViewHolder
 
         holder.foodNameTextView.text = card.description
-        holder.foodQuantityTextView.text = card.amount.toString()
-        holder.foodCalQuantityTextView.text = card.energy.toString()
-        holder.foodCarbQuantityTextView.text = card.carbohydrate.toString()
-        holder.foodProtQuantityTextView.text = card.protein.toString()
-        holder.foodGordQuantityTextView.text = card.fat.toString()
+        holder.foodAmountTextView.text = card.amount.toString().plus(" ").plus(card.measure).plus(" de ").plus(card.description).plus(" (").plus(card.weight.toString()).plus(" g)")
+        holder.foodCalQuantityTextView.text = card.energy.toString().plus(" kcal")
+        holder.foodCarbQuantityTextView.text = card.carbohydrate.toString().plus(" g")
+        holder.foodProtQuantityTextView.text = card.protein.toString().plus(" g")
+        holder.foodGordQuantityTextView.text = card.fat.toString().plus(" g")
     }
 
     fun updateFoods(foods: MutableList<Food>){
@@ -46,7 +45,7 @@ class PostAdapter(
 
     inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val foodNameTextView: TextView = itemView.findViewById(R.id.foodName)
-        val foodQuantityTextView: TextView = itemView.findViewById(R.id.foodQuantity)
+        val foodAmountTextView: TextView = itemView.findViewById(R.id.foodAmount)
         val foodCalQuantityTextView: TextView = itemView.findViewById(R.id.foodCalQuantity)
         val foodCarbQuantityTextView: TextView = itemView.findViewById(R.id.foodCarbQuantity)
         val foodProtQuantityTextView: TextView = itemView.findViewById(R.id.foodProtQuantity)

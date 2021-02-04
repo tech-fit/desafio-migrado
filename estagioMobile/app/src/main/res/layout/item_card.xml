@@ -48,7 +48,7 @@
                     android:ellipsize="end"/>
 
                 <TextView
-                    android:id="@+id/foodQuantity"
+                    android:id="@+id/foodAmount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Objetivo"

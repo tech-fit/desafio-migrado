@@ -3,19 +3,19 @@ package com.example.mobiletest.ui.post
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobiletest.R
-import com.example.mobiletest.data.Feed
 import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
-import com.example.mobiletest.ui.feed.FeedAdapter
+import com.example.mobiletest.extensions.getDateFormated
 import com.example.mobiletest.ui.profile.ProfileActivity
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_post.*
+import org.w3c.dom.Text
 
 class PostActivity : AppCompatActivity() {
 
@@ -59,6 +59,8 @@ class PostActivity : AppCompatActivity() {
 
         showProfile(post.profile)
 
+        showTotalNutrients(post)
+
         getInitialPosts()
 
     }
@@ -83,14 +85,36 @@ class PostActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    fun showTotalNutrients(post: Post){
+        val totalFoodEnergyQuantity = findViewById<TextView>(R.id.totalFoodEnergyQuantity)
+        val totalFoodCarbQuantity = findViewById<TextView>(R.id.totalFoodCarbQuantity)
+        val totalProtQuantity = findViewById<TextView>(R.id.totalFoodProtQuantity)
+        val totalFatQuantity = findViewById<TextView>(R.id.totalFoodFatQuantity)
+        val mealTypeArray: Array<String> = resources.getStringArray(R.array.meal_type_array)
+        val mealTypeTextView = findViewById<TextView>(R.id.mealTypeTextView)
+        val postTimestamp = findViewById<TextView>(R.id.postTimestamp)
+
+        totalFoodEnergyQuantity.text = post.energy.toString().plus(" kcal")
+        totalFoodCarbQuantity.text = post.carbohydrate.toString().plus(" g")
+        totalProtQuantity.text = post.protein.toString().plus(" g")
+        totalFatQuantity.text = post.fat.toString().plus(" g")
+        mealTypeTextView.text = mealTypeArray[post.mealType]
+        postTimestamp.text = post.date.getDateFormated()
+    }
+
     fun showProfile(profile: Profile){
         val personName = findViewById<TextView>(R.id.personName)
         val personObjective = findViewById<TextView>(R.id.personObjective)
         val profileImage = findViewById<CircleImageView>(R.id.personProfileImage)
+        val postPhoto = findViewById<ImageView>(R.id.postPhoto)
 
         Picasso.get()
                 .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
                 .into(profileImage)
+
+        Picasso.get()
+                .load(post.image).placeholder(R.drawable.ic_restaurant_black_24dp)
+                .into(postPhoto)
 
         profileImage.setOnClickListener{
             goToProfileActivity(profile)
