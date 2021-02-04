@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/cardHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="5dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/foodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Arroz com feijao"
+                    android:textColor="@color/textDarkPrimary"
+                    android:textStyle="bold"
+                    android:maxLines="1"
+                    android:textSize="18sp"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/foodQuantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="xxx Colher de Arroz (xxx g)"
+                    android:textColor="@color/textDarkSecondary"
+                    android:maxLines="1"
+                    android:textSize="14sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View style="@style/DividerTop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    tools:text="Cal"
+                    style="@style/nutritionBold"/>
+
+                <TextView
+                    tools:text="Carb"
+                    style="@style/nutritionBold"/>
+
+                <TextView
+                    tools:text="Prot"
+                    style="@style/nutritionBold"/>
+
+                <TextView
+                    tools:text="Gord"
+                    style="@style/nutritionBold"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/foodCalQuantity"
+                    tools:text="xxx kcal"
+                    style="@style/nutritionQuantity"/>
+
+                <TextView
+                    android:id="@+id/foodCarbQuantity"
+                    tools:text="xxx g"
+                    style="@style/nutritionQuantity"/>
+
+                <TextView
+                    android:id="@+id/foodProtQuantity"
+                    tools:text="xxx g"
+                    style="@style/nutritionQuantity"/>
+
+                <TextView
+                    android:id="@+id/foodGordQuantity"
+                    tools:text="xxx g"
+                    style="@style/nutritionQuantity"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View style="@style/DividerBottom"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

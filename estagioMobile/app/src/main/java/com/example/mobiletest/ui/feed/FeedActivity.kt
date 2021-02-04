@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class FeedActivity : AppCompatActivity() {
 
-    //Repsonsável por fornecer os dados e controlar a lógica para a Activity
+    //Responsável por fornecer os dados e controlar a lógica para a Activity
     private val presenter = FeedPresenter()
 
     //Responsável por gerenciar a lista de Posts
@@ -94,6 +94,7 @@ class FeedActivity : AppCompatActivity() {
 
         //Passagem de parâmetro entre activities
         bundle.putSerializable(PostActivity.POST_EXTRAS, post)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 
