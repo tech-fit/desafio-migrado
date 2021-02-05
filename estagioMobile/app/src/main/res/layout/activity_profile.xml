@@ -6,6 +6,11 @@
     tools:context=".ui.post.PostActivity"
     android:id="@+id/rootProfileLayout">
 
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeContainerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -20,7 +25,7 @@
                 android:src="@drawable/ic_account_circle_black_24dp" />
 
             <TextView
-                android:id="@+id/foodName"
+                android:id="@+id/personNameProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -32,7 +37,7 @@
                 android:ellipsize="end"/>
 
             <TextView
-                android:id="@+id/foodAmount"
+                android:id="@+id/personGoalProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -51,5 +56,7 @@
                 android:layout_height="match_parent" />
 
         </LinearLayout>
+
+    </com.baoyz.widget.PullRefreshLayout>
 
 </FrameLayout>

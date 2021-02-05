@@ -79,6 +79,10 @@ class PostActivity : AppCompatActivity() {
 
     private fun goToProfileActivity(profile: Profile) {
         val postIntent = Intent(this, ProfileActivity::class.java)
+        val bundle = Bundle()
+
+        bundle.putSerializable(ProfileActivity.PROFILE_EXTRAS, profile)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 

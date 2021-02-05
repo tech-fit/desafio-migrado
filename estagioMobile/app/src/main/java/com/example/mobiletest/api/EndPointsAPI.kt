@@ -3,6 +3,7 @@ package com.example.mobiletest.api
 import com.example.mobiletest.data.Feed
 import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.PostDetail
+import com.example.mobiletest.data.ProfileDetail
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -22,5 +23,5 @@ interface EndPointsAPI {
 
     @Headers(HEADER)
     @GET("profile/{id}")
-    fun getProfileDetail(@Path("id") id: Long)
+    fun getProfileDetail(@Path("id") id: Long, @Query("p") p: Int?, @Query("t") t: Long?): Call<ProfileDetail>
 }
