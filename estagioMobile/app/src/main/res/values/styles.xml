@@ -43,4 +43,51 @@
         <item name="android:maxLines">1</item>
         <item name="android:textSize">14sp</item>
     </style>
+
+    <style name="miniProfilePhoto">
+        <item name="android:layout_width">36dp</item>
+        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:src">@drawable/ic_account_circle_black_24dp</item>
+    </style>
+
+    <style name="miniDarkText">
+        <item name="android:textColor">@color/textDarkPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="miniGrayText">
+        <item name="android:textColor">@color/textDarkSecondary</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="mealTypeTextView">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+    </style>
+
+    <style name="Timestamp">
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginBottom">12dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="likeBtn">
+        <item name="android:layout_width">34dp</item>
+        <item name="android:layout_height">34dp</item>
+        <item name="android:layout_alignParentEnd">true</item>
+        <item name="android:layout_margin">12dp</item>
+        <item name="android:src">@drawable/ic_favorite_border_white_24dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:elevation">2dp</item>
+    </style>
 </resources>

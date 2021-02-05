@@ -80,7 +80,7 @@ class FeedActivity : AppCompatActivity() {
 
         getInitialPosts()
 
-        swipeContainer.setOnRefreshListener {
+        swipeContainerMain.setOnRefreshListener {
             adapter.updatePosts(mutableListOf(), true)
             getInitialPosts()
         }
@@ -119,7 +119,7 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun showLoading(show: Boolean) {
-        swipeContainer.setRefreshing(show)
+        swipeContainerMain.setRefreshing(show)
     }
 
     private fun showMessage(message: String) {

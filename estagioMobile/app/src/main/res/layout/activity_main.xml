@@ -6,7 +6,7 @@
 android:id="@+id/rootMainLayout">
 
     <com.baoyz.widget.PullRefreshLayout
-        android:id="@+id/swipeContainer"
+        android:id="@+id/swipeContainerMain"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

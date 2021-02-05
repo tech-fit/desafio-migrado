@@ -33,11 +33,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Arroz com feijao"
-                    android:textColor="@color/textDarkPrimary"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    android:textSize="18sp"
-                    android:ellipsize="end"/>
+                    style="@style/miniDarkText"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -47,37 +43,8 @@
                         android:id="@+id/foodAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        tools:text="xxx "
-                        android:textColor="@color/textDarkSecondary"
-                        android:maxLines="1"
-                        android:textSize="14sp"/>
-
-                    <TextView
-                        android:id="@+id/foodMeasure"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="colher de "
-                        android:textColor="@color/textDarkSecondary"
-                        android:maxLines="1"
-                        android:textSize="14sp"/>
-                    <TextView
-                        android:id="@+id/foodDescription"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="arroz "
-                        android:textColor="@color/textDarkSecondary"
-                        android:maxLines="1"
-                        android:textSize="14sp"/>
-
-                    <TextView
-                        android:id="@+id/foodWeight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        tools:text="(100g)"
-                        android:textColor="@color/textDarkSecondary"
-                        android:maxLines="1"
-                        android:textSize="14sp"/>
-
+                        tools:text="xxx colher de arroz (100g)"
+                        style="@style/miniGrayText"/>
 
                 </LinearLayout>
 

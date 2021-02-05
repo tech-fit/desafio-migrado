@@ -38,6 +38,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var onGetMorePostsSuccess: (profileDetail: ProfileDetail) -> Unit
     private lateinit var onGetPostsError: () -> Unit
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
@@ -65,7 +66,7 @@ class ProfileActivity : AppCompatActivity() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                val layoutManager = recyclerView.layoutManager as GridLayoutManager
                 val totalItemCount = layoutManager.itemCount
                 val lastVisible = layoutManager.findLastVisibleItemPosition()
 
@@ -149,7 +150,7 @@ class ProfileActivity : AppCompatActivity() {
     fun showProfile(profile: Profile){
         val personName = findViewById<TextView>(R.id.personNameProfile)
         val personObjective = findViewById<TextView>(R.id.personGoalProfile)
-        val profileImage = findViewById<CircleImageView>(R.id.personProfileImage)
+        val profileImage = findViewById<CircleImageView>(R.id.personProfileImageProfile)
 
         Picasso.get()
                 .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
@@ -158,9 +159,5 @@ class ProfileActivity : AppCompatActivity() {
         personName.text = profile.name
         personObjective.text = profile.generalGoal
     }
-
-    /*
-    // TODO: Implementar a tela de Perfil com a lista de Posts do usuário
-     */
 
 }

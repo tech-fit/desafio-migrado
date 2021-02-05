@@ -7,7 +7,7 @@
     android:id="@+id/rootPostLayout">
 
     <com.baoyz.widget.PullRefreshLayout
-        android:id="@+id/swipeContainer"
+        android:id="@+id/swipeContainerPost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -29,11 +29,8 @@
                     android:layout_gravity="center">
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/personProfileImage"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:layout_margin ="8dp"
-                        android:src="@drawable/ic_account_circle_black_24dp" />
+                        android:id="@+id/personProfileImagePost"
+                        style="@style/miniProfilePhoto" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -42,24 +39,18 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/personName"
+                            android:id="@+id/personNamePost"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Nome do Autor"
-                            android:textColor="@color/textDarkPrimary"
-                            android:textStyle="bold"
-                            android:maxLines="1"
-                            android:textSize="18sp"
-                            android:ellipsize="end"/>
+                            style="@style/miniDarkText"/>
 
                         <TextView
-                            android:id="@+id/personObjective"
+                            android:id="@+id/personGoalPost"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             tools:text="Objetivo"
-                            android:textColor="@color/textDarkSecondary"
-                            android:maxLines="1"
-                            android:textSize="14sp"/>
+                            style="@style/miniGrayText"/>
                     </LinearLayout>
 
                 </LinearLayout>
@@ -100,32 +91,18 @@
                                 android:id="@+id/mealTypeTextView"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:layout_alignParentBottom="true"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginBottom="12dp"/>
+                                style="@style/mealTypeTextView"/>
 
                             <TextView
                                 android:id="@+id/postTimestamp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_toEndOf="@id/mealTypeTextView"
-                                android:layout_marginStart="4dp"
-                                android:layout_marginBottom="12dp"
-                                android:textSize="16sp"
-                                android:textColor="@color/white"
-                                android:layout_alignParentBottom="true"/>
+                                style="@style/Timestamp"/>
 
                             <ImageView
-                                android:id="@+id/likeBtn"
-                                android:layout_width="34dp"
-                                android:layout_height="34dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_margin="12dp"
-                                android:src="@drawable/ic_favorite_border_white_24dp"
-                                android:layout_alignParentBottom="true"
-                                android:elevation="2dp"/>
+                                android:id="@+id/likeBtnPost"
+                                style="@style/likeBtn"/>
 
                         </RelativeLayout>
 
@@ -168,13 +145,11 @@
 
                         <TextView
                             android:text="Cal"
-                            style="@style/nutritionBold"
-                            />
+                            style="@style/nutritionBold" />
 
                         <TextView
                             android:text="Carb"
-                            style="@style/nutritionBold"
-                            />
+                            style="@style/nutritionBold" />
 
                         <TextView
                             android:text="Prot"
