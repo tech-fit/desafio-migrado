@@ -10,10 +10,14 @@ import com.example.mobiletest.data.Food
 import com.example.mobiletest.R
 import org.w3c.dom.Text
 
+//Classe responsável por renderizar cada item do post (refeição e nutrientes) dentro de uma lista na PostActivity
+
+
 class PostAdapter(
         private val activity: AppCompatActivity
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
+    //Lista de Posts a ser renderizada
     private val foodList: MutableList<Food> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -37,6 +41,7 @@ class PostAdapter(
         holder.foodGordQuantityTextView.text = card.fat.round().toString().plus(" g")
     }
 
+    // Responsável por limitar o número de casas decimais dos nutrientes exibidos
     fun Float.round(decimals: Int = 2): Float = "%.${decimals}f".format(this).toFloat()
 
     fun updateFoods(foods: MutableList<Food>, clear: Boolean){
@@ -45,6 +50,7 @@ class PostAdapter(
         notifyDataSetChanged()
     }
 
+    //Classe usada para montar e manter as Views necessárias para exibição do Post(refeição e nutrientes)
     inner class FoodViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val foodNameTextView: TextView = itemView.findViewById(R.id.foodName)
         val foodAmountTextView: TextView = itemView.findViewById(R.id.foodAmount)

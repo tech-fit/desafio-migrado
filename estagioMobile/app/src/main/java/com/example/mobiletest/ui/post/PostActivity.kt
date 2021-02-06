@@ -21,15 +21,20 @@ import kotlinx.android.synthetic.main.activity_post.swipeContainerPost
 
 class PostActivity : AppCompatActivity() {
 
+    // Objeto que acompanha a activity para retornar dados do Post
     companion object {
         const val POST_EXTRAS = "postExtras"
-        const val PROFILE_EXTRAS = "profileExtras"
     }
 
     private lateinit var post: Post
+
+    //Responsável por fornecer os dados e controlar a lógica para a Activity
     private val presenter = PostPresenter()
+
+    //Responsável por gerenciar a lista de Posts
     private lateinit var adapter: PostAdapter
 
+    //Unidades de códigos que são chamadas em casos específicos
     private lateinit var onGetPostsSuccess: (Post) -> Unit
     private lateinit var onGetPostsError: () -> Unit
 
@@ -48,7 +53,7 @@ class PostActivity : AppCompatActivity() {
 
         adapter = PostAdapter(this)
 
-        //Configuração da Lista que receberá os Posts
+        //Configuração da Lista que receberá os Posts(refeição e nutrientes)
         recyclerPost.layoutManager = LinearLayoutManager(this)
         recyclerPost.adapter = adapter
 
@@ -81,6 +86,7 @@ class PostActivity : AppCompatActivity() {
         val postIntent = Intent(this, ProfileActivity::class.java)
         val bundle = Bundle()
 
+        //Passagem de parâmetro entre activities
         bundle.putSerializable(ProfileActivity.PROFILE_EXTRAS, profile)
         postIntent.putExtras(bundle)
         startActivity(postIntent)
@@ -113,8 +119,10 @@ class PostActivity : AppCompatActivity() {
         totalFatQuantity.text = post.fat.round().toString().plus(" g")
     }
 
+    // Responsável por limitar o número de casas decimais dos nutrientes exibidos
     fun Float.round(decimals: Int = 2): Float = "%.${decimals}f".format(this).toFloat()
 
+    // Responsável por carregar as informações do perfil da Pessoa
     fun showProfile(profile: Profile){
         val personName = findViewById<TextView>(R.id.personNamePost)
         val personObjective = findViewById<TextView>(R.id.personGoalPost)
@@ -132,6 +140,7 @@ class PostActivity : AppCompatActivity() {
         personObjective.text = profile.generalGoal
     }
 
+    // Responsável por carregar as informações do Post da pessoa
     fun showPostPhoto(post: Post){
         val postPhoto = findViewById<ImageView>(R.id.postPhoto)
         val likeBtnPost = findViewById<ImageView>(R.id.likeBtnPost)
@@ -173,7 +182,7 @@ class PostActivity : AppCompatActivity() {
     }
 
     private fun showMessage(message: String) {
-        Snackbar.make(rootMainLayout, message, Snackbar.LENGTH_LONG).show()
+        Snackbar.make(rootPostLayout, message, Snackbar.LENGTH_LONG).show()
     }
 
 }

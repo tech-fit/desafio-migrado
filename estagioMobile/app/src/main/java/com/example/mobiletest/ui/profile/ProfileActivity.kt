@@ -66,12 +66,12 @@ class ProfileActivity : AppCompatActivity() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val layoutManager = recyclerView.layoutManager as GridLayoutManager
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                 val totalItemCount = layoutManager.itemCount
                 val lastVisible = layoutManager.findLastVisibleItemPosition()
 
                 //Carrega mais Posts na lista se o último Post visível estiver entre os 5 últimos da lista atual
-                val endHasBeenReached = lastVisible + 5 >= totalItemCount
+                val endHasBeenReached = lastVisible + 6 >= totalItemCount
                 if (totalItemCount > 0 && endHasBeenReached) {
                     geMorePosts()
                 }
@@ -147,6 +147,7 @@ class ProfileActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    // Responsável por carregar as informações do perfil da Pessoa
     fun showProfile(profile: Profile){
         val personName = findViewById<TextView>(R.id.personNameProfile)
         val personObjective = findViewById<TextView>(R.id.personGoalProfile)

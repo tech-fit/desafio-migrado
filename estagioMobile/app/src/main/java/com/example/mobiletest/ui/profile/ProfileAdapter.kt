@@ -12,11 +12,14 @@ import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.Profile
 import com.squareup.picasso.Picasso
 
+//Classe responsável por renderizar cada item do post dentro de uma lista na ProfileActivity
+
 class ProfileAdapter(
         private val activity: AppCompatActivity,
         private val onPostBodyClick: (post: Post, profile: Profile) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    //Lista de Posts a ser renderizada
     private val postList: MutableList<Post> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -50,6 +53,7 @@ class ProfileAdapter(
         notifyDataSetChanged()
     }
 
+    //Classe usada para montar e manter as Views necessárias para exibição do Post
     inner class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val postPhotoProfileImageView: ImageView = itemView.findViewById(R.id.postPhotoProfile)
         val postBodyLayoutProfile: LinearLayout = itemView.findViewById(R.id.postBodyLayoutProfile)

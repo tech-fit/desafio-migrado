@@ -8,6 +8,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+//Classe responsável por fornecer os dados e controlar a lógica para a FeedActivity
+
 class PostPresenter {
 
     fun getPostDetail(onSuccess: (post: Post) -> Unit, onError: () -> Unit, feedhash: String) {
