@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.post.PostActivity"
+    android:orientation="vertical"
     android:id="@+id/rootPostLayout">
 
     <com.baoyz.widget.PullRefreshLayout
@@ -11,186 +12,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical">
-
-            <LinearLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPost"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/cardHeaderLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginEnd="8dp"
-                    android:layout_gravity="center">
-
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/personProfileImagePost"
-                        style="@style/miniProfilePhoto" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/personNamePost"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:text="Nome do Autor"
-                            style="@style/miniDarkText"/>
-
-                        <TextView
-                            android:id="@+id/personGoalPost"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            tools:text="Objetivo"
-                            style="@style/miniGrayText"/>
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/postBodyLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <FrameLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp">
-
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <ImageView
-                                    android:id="@+id/postPhoto"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/ic_restaurant_black_24dp"
-                                    android:scaleType="centerCrop"/>
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:src="@drawable/trending_gradiente_shape"/>
-
-                            </FrameLayout>
-
-                            <TextView
-                                android:id="@+id/mealTypeTextView"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                style="@style/mealTypeTextView"/>
-
-                            <TextView
-                                android:id="@+id/postTimestamp"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_toEndOf="@id/mealTypeTextView"
-                                style="@style/Timestamp"/>
-
-                            <ImageView
-                                android:id="@+id/likeBtnPost"
-                                style="@style/likeBtn"/>
-
-                        </RelativeLayout>
-
-                    </FrameLayout>
-
-                </LinearLayout>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recyclerPost"
-                    android:scrollbars="vertical"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginBottom="5dp"
-                        android:text="TOTAL"
-                        style="@style/miniDarkText"/>
-
-                    <View style="@style/DividerTop"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:text="Cal"
-                            style="@style/nutritionBold" />
-
-                        <TextView
-                            android:text="Carb"
-                            style="@style/nutritionBold" />
-
-                        <TextView
-                            android:text="Prot"
-                            style="@style/nutritionBold"/>
-
-                        <TextView
-                            android:text="Gord"
-                            style="@style/nutritionBold"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/totalFoodEnergyQuantity"
-                            tools:text="xxx kcal"
-                            style="@style/nutritionQuantity"/>
-
-                        <TextView
-                            android:id="@+id/totalFoodCarbQuantity"
-                            tools:text="xxx g"
-                            style="@style/nutritionQuantity"/>
-
-                        <TextView
-                            android:id="@+id/totalFoodProtQuantity"
-                            tools:text="xxx g"
-                            style="@style/nutritionQuantity"/>
-
-                        <TextView
-                            android:id="@+id/totalFoodFatQuantity"
-                            tools:text="xxx g"
-                            style="@style/nutritionQuantity"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
+                android:layout_height="match_parent"/>
 
     </com.baoyz.widget.PullRefreshLayout>
 
-</FrameLayout>
+</LinearLayout>

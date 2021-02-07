@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/cardHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginEnd="8dp"
+            android:layout_gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/personProfileImagePost"
+                style="@style/miniProfilePhoto" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/personNamePost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Nome do Autor"
+                    style="@style/miniDarkText"/>
+
+                <TextView
+                    android:id="@+id/personGoalPost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Objetivo"
+                    style="@style/miniGrayText"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/postBodyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/postPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_restaurant_black_24dp"
+                            android:scaleType="centerCrop"/>
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/trending_gradiente_shape"/>
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/mealTypeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/mealTypeTextView"/>
+
+                    <TextView
+                        android:id="@+id/postTimestamp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/mealTypeTextView"
+                        style="@style/Timestamp"/>
+
+                    <ImageView
+                        android:id="@+id/likeBtnPost"
+                        style="@style/likeBtn"/>
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

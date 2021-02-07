@@ -60,8 +60,8 @@ class ProfileAdapter(
             val holderProfile = viewHolder as ProfileHeaderViewHolder
             val profile = postList[0].profile
 
-            holderProfile.personGoalProfile.text = profile.generalGoal
-            holderProfile.personNameProfile.text = profile.name
+            holderProfile.personGoalProfileTextView.text = profile.generalGoal
+            holderProfile.personNameProfileTextView.text = profile.name
 
             //Carregamento de imagens por meio de uma URL
             Picasso.get()
@@ -100,8 +100,8 @@ class ProfileAdapter(
 
     // Classe usada para montar e manter as Views necessárias para exibição do Profile
     inner class ProfileHeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val personNameProfile: TextView = itemView.findViewById(R.id.personNameProfile)
-        val personGoalProfile: TextView = itemView.findViewById(R.id.personGoalProfile)
+        val personNameProfileTextView: TextView = itemView.findViewById(R.id.personNameProfile)
+        val personGoalProfileTextView: TextView = itemView.findViewById(R.id.personGoalProfile)
         val personProfileImageProfile: CircleImageView = itemView.findViewById(R.id.personProfileImageProfile)
     }
 }
