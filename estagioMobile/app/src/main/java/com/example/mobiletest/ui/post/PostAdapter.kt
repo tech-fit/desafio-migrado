@@ -32,8 +32,6 @@ class PostAdapter(
         val card = foodList[position]
         val holder = viewHolder as FoodViewHolder
 
-
-
         holder.foodNameTextView.text = card.description
         holder.foodAmountTextView.text = card.amount.round().toString().plus(" ").plus(card.measure).plus(" de ").plus(card.description).plus(" ").plus(String.format(
                 activity.getString(R.string.food_grams_mask),

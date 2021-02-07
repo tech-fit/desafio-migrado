@@ -22,7 +22,6 @@ class ProfileAdapter(
         private val onPostBodyClick: (post: Post, profile: Profile) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-
     //Lista de Posts a ser renderizada
     private val postList: MutableList<Post> = mutableListOf()
 
@@ -38,7 +37,7 @@ class ProfileAdapter(
     }
 
     override fun getItemCount(): Int {
-        return postList.size
+        return postList.size + 1
     }
 
     // Retorna qual View utilizar dependendo da posição da lista
@@ -52,21 +51,26 @@ class ProfileAdapter(
 
     override fun onBindViewHolder(viewHolder: RecyclerView.ViewHolder, position: Int) {
 
+        // Prevenção de outOfBounds ao montar a tela antes de terminar o request
+        if (postList.size < 1){
+            return
+        }
         // Carrega as informações da Header
         if (position == 0){
             val holderProfile = viewHolder as ProfileHeaderViewHolder
-            val profile = postList[1].profile
+            val profile = postList[0].profile
 
             holderProfile.personGoalProfile.text = profile.generalGoal
             holderProfile.personNameProfile.text = profile.name
 
+            //Carregamento de imagens por meio de uma URL
             Picasso.get()
                     .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
                     .into(holderProfile.personProfileImageProfile)
-            return
+
         // Carrega as informações do card
         } else {
-            val card = postList[position]
+            val card = postList[position-1]
             val profile = card.profile
             val holder = viewHolder as ProfileViewHolder
 
