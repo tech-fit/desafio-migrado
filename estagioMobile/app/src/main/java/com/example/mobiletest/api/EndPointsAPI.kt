@@ -1,7 +1,6 @@
 package com.example.mobiletest.api
 
 import com.example.mobiletest.data.Feed
-import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.PostDetail
 import com.example.mobiletest.data.ProfileDetail
 import retrofit2.Call

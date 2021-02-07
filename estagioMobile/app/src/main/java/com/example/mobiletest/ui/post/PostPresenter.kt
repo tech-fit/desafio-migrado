@@ -1,7 +1,6 @@
 package com.example.mobiletest.ui.post
 
 import com.example.mobiletest.api.ClientAPI
-import com.example.mobiletest.data.Feed
 import com.example.mobiletest.data.Post
 import com.example.mobiletest.data.PostDetail
 import retrofit2.Call
@@ -9,7 +8,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 //Classe responsável por fornecer os dados e controlar a lógica para a FeedActivity
-
 class PostPresenter {
 
     fun getPostDetail(onSuccess: (post: Post) -> Unit, onError: () -> Unit, feedhash: String) {

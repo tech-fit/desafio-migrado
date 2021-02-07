@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobiletest.R
 import com.example.mobiletest.data.Post
@@ -16,7 +15,6 @@ import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
 //Classe responsável por renderizar cada item do post dentro de uma lista na ProfileActivity
-
 class ProfileAdapter(
         private val activity: AppCompatActivity,
         private val onPostBodyClick: (post: Post, profile: Profile) -> Unit
@@ -68,7 +66,7 @@ class ProfileAdapter(
                     .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
                     .into(holderProfile.personProfileImageProfile)
 
-        // Carrega as informações do card
+        // Carrega as informações do Card
         } else {
             val card = postList[position-1]
             val profile = card.profile

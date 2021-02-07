@@ -17,7 +17,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 
 //Classe responsável por renderizar cada item do post dentro de uma lista na FeedActivity
-
 class FeedAdapter(
         private val activity: AppCompatActivity,
         private val onItemProfileClick: (profile: Profile) -> Unit, //Callback para quando o usuário clicar no cabeçalho do Post

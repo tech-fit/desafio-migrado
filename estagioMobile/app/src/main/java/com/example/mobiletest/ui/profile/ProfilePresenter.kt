@@ -46,4 +46,5 @@ class ProfilePresenter {
         p++ //incremento na variável para buscar a próxima página de posts
         getProfileDetail(onSuccess, onError, id, p, t)
     }
+
 }

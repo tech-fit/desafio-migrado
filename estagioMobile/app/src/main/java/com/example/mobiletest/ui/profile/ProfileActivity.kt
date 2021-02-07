@@ -3,8 +3,6 @@ package com.example.mobiletest.ui.profile
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,8 +13,6 @@ import com.example.mobiletest.data.Profile
 import com.example.mobiletest.data.ProfileDetail
 import com.example.mobiletest.ui.post.PostActivity
 import com.google.android.material.snackbar.Snackbar
-import com.squareup.picasso.Picasso
-import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_profile.*
 
 class ProfileActivity : AppCompatActivity() {

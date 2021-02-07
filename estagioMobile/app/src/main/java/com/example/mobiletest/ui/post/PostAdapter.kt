@@ -1,6 +1,5 @@
 package com.example.mobiletest.ui.post
 
-import android.provider.Settings.Global.getString
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,8 +16,6 @@ import com.example.mobiletest.extensions.getDateFormated
 import com.squareup.picasso.Picasso
 
 // Classe responsável por renderizar cada item do post (refeição e nutrientes) dentro de uma lista na PostActivity
-
-
 class PostAdapter(
         private val activity: AppCompatActivity,
         private val onItemProfileClick: (profile: Profile) -> Unit,
@@ -61,10 +58,12 @@ class PostAdapter(
             return
         }
 
+        // Carrega as informações do Header
         if (position == 0){
             val holderHeader = viewHolder as PostHeaderViewHolder
             val profile = post.profile
 
+            //Carregamento de imagens por meio de uma URL
             Picasso.get()
                     .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
                     .into(holderHeader.personProfileImagePost)
@@ -86,6 +85,7 @@ class PostAdapter(
                 }
             }
 
+            //Carregamento de imagens por meio de uma URL
             Picasso.get()
                     .load(post.image).placeholder(R.drawable.ic_restaurant_black_24dp)
                     .into(holderHeader.postPhotoImageView)
@@ -100,6 +100,7 @@ class PostAdapter(
             holderHeader.mealTypeTextView.text = holderHeader.mealTypeArray[post.mealType]
             holderHeader.postTimestampTextView.text = post.date.getDateFormated()
 
+        // Carrega as informações do Footer
         } else if (position == foodList.size + 1){
             val holderFooter = viewHolder as PostFooterViewHolder
 
@@ -119,6 +120,8 @@ class PostAdapter(
                     activity.getString(R.string.fat_label),
                     post.fat.round()
             )
+
+        // Carrega as informações do Card
         } else {
             val card = foodList[position-1]
             val holder = viewHolder as FoodViewHolder
@@ -166,6 +169,7 @@ class PostAdapter(
         val foodGordQuantityTextView: TextView = itemView.findViewById(R.id.foodGordQuantity)
     }
 
+    // Classe usada para montar e manter as Views necessárias para exibição do Post(perfil e post)
     inner class PostHeaderViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val personNamePostTextView: TextView = itemView.findViewById(R.id.personNamePost)
         val personGoalPostTextView: TextView = itemView.findViewById(R.id.personGoalPost)
@@ -178,6 +182,7 @@ class PostAdapter(
         val mealTypeArray: Array<String> = activity.resources.getStringArray(R.array.meal_type_array)
     }
 
+    // Classe usada para montar e manter as Views necessárias para exibição do Post(nutrientes totais)
     inner class PostFooterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val totalFoodEnergyQuantityTextView: TextView = itemView.findViewById(R.id.totalFoodEnergyQuantity)
         val totalFoodCarbQuantityTextView: TextView = itemView.findViewById(R.id.totalFoodCarbQuantity)

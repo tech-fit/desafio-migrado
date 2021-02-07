@@ -3,9 +3,7 @@ package com.example.mobiletest.ui.post
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mobiletest.R
 import com.example.mobiletest.data.Post
