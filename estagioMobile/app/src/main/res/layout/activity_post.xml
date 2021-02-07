@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.post.PostActivity"
+    android:orientation="vertical"
     android:id="@+id/rootPostLayout">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:padding="32dp"
-        android:text="Aqui devem aparecer os detalhes do Post!"
-        android:textSize="18sp"
-        tools:ignore="HardcodedText" />
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeContainerPost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</FrameLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPost"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </com.baoyz.widget.PullRefreshLayout>
+
+</LinearLayout>

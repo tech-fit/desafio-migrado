@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class FeedActivity : AppCompatActivity() {
 
-    //Repsonsável por fornecer os dados e controlar a lógica para a Activity
+    //Responsável por fornecer os dados e controlar a lógica para a Activity
     private val presenter = FeedPresenter()
 
     //Responsável por gerenciar a lista de Posts
@@ -80,7 +80,7 @@ class FeedActivity : AppCompatActivity() {
 
         getInitialPosts()
 
-        swipeContainer.setOnRefreshListener {
+        swipeContainerMain.setOnRefreshListener {
             adapter.updatePosts(mutableListOf(), true)
             getInitialPosts()
         }
@@ -94,11 +94,17 @@ class FeedActivity : AppCompatActivity() {
 
         //Passagem de parâmetro entre activities
         bundle.putSerializable(PostActivity.POST_EXTRAS, post)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 
     private fun goToProfileActivity(profile: Profile) {
         val postIntent = Intent(this, ProfileActivity::class.java)
+        val bundle = Bundle()
+
+        //Passagem de parâmetro entre activities
+        bundle.putSerializable(ProfileActivity.PROFILE_EXTRAS, profile)
+        postIntent.putExtras(bundle)
         startActivity(postIntent)
     }
 
@@ -113,7 +119,7 @@ class FeedActivity : AppCompatActivity() {
     }
 
     private fun showLoading(show: Boolean) {
-        swipeContainer.setRefreshing(show)
+        swipeContainerMain.setRefreshing(show)
     }
 
     private fun showMessage(message: String) {

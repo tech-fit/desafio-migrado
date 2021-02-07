@@ -7,7 +7,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-//Classe repsonsável por fornecer os dados e controlar a lógica para a FeedActivity
+//Classe responsável por fornecer os dados e controlar a lógica para a FeedActivity
 class FeedPresenter {
 
     private var p = 0 //Variável que controla a página atual para requisição

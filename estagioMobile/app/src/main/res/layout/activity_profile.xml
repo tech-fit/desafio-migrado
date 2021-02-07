@@ -6,14 +6,18 @@
     tools:context=".ui.post.PostActivity"
     android:id="@+id/rootProfileLayout">
 
-    <TextView
-        android:text="Aqui deve aparecer o Perfil do usuário com sua lista de Posts!"
-        android:layout_gravity="center"
-        android:textSize="18sp"
-        android:padding="32dp"
-        android:gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="HardcodedText" />
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/swipeContainerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+                <!-- Lembrar de implementar o RecyclerView em Grid de 3 colunas-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerProfile"
+                    android:scaleType="fitXY"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+    </com.baoyz.widget.PullRefreshLayout>
 
 </FrameLayout>

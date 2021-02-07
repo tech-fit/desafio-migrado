@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="TOTAL"
+            style="@style/miniDarkText"/>
+
+        <View style="@style/DividerTop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:text="Cal"
+                style="@style/nutritionBold" />
+
+            <TextView
+                android:text="Carb"
+                style="@style/nutritionBold" />
+
+            <TextView
+                android:text="Prot"
+                style="@style/nutritionBold"/>
+
+            <TextView
+                android:text="Gord"
+                style="@style/nutritionBold"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/totalFoodEnergyQuantity"
+                tools:text="xxx kcal"
+                style="@style/nutritionQuantity"/>
+
+            <TextView
+                android:id="@+id/totalFoodCarbQuantity"
+                tools:text="xxx g"
+                style="@style/nutritionQuantity"/>
+
+            <TextView
+                android:id="@+id/totalFoodProtQuantity"
+                tools:text="xxx g"
+                style="@style/nutritionQuantity"/>
+
+            <TextView
+                android:id="@+id/totalFoodFatQuantity"
+                tools:text="xxx g"
+                style="@style/nutritionQuantity"/>
+
+        </LinearLayout>
+
+</LinearLayout>

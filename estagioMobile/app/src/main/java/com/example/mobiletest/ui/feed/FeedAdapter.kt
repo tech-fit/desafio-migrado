@@ -17,7 +17,6 @@ import de.hdodenhof.circleimageview.CircleImageView
 
 
 //Classe responsável por renderizar cada item do post dentro de uma lista na FeedActivity
-
 class FeedAdapter(
         private val activity: AppCompatActivity,
         private val onItemProfileClick: (profile: Profile) -> Unit, //Callback para quando o usuário clicar no cabeçalho do Post
@@ -112,11 +111,11 @@ class FeedAdapter(
 
     //Classe usada para montar e manter as Views necessárias para exibição do Post
     inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val personNameTextView: TextView = itemView.findViewById(R.id.personName)
-        val personGoalTextView: TextView = itemView.findViewById(R.id.personGoal)
+        val personNameTextView: TextView = itemView.findViewById(R.id.personNameMain)
+        val personGoalTextView: TextView = itemView.findViewById(R.id.personGoalMain)
         val personImageView: CircleImageView = itemView.findViewById(R.id.personProfileImage)
         val cardHeaderLayout: LinearLayout = itemView.findViewById(R.id.cardHeaderLayout)
-        val postImageView: ImageView = itemView.findViewById(R.id.postPhoto)
+        val postImageView: ImageView = itemView.findViewById(R.id.postPhotoMain)
         val likeButton: ImageView = itemView.findViewById(R.id.likeBtn)
         val energyTextView: TextView = itemView.findViewById(R.id.energyText)
         val postTimeTextView: TextView = itemView.findViewById(R.id.postTimestamp)
