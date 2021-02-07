@@ -22,7 +22,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center_vertical"
@@ -34,6 +34,7 @@
                     android:layout_height="wrap_content"
                     tools:text="Arroz com feijao"
                     style="@style/miniDarkText"/>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -43,6 +44,8 @@
                         android:id="@+id/foodAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:ellipsize="end"
                         tools:text="xxx colher de arroz (100g)"
                         style="@style/miniGrayText"/>
 

@@ -58,7 +58,19 @@ class ProfileActivity : AppCompatActivity() {
         setupToolbar(resources.getString(R.string.profile))
 
         //Configuração da Lista que receberá os Posts
-        recyclerProfile.layoutManager = GridLayoutManager(this, 3)
+        val layoutManager = GridLayoutManager(this, 3)
+
+        // Define o layout do GridLayout, temos o primeiro elemento ocupando as 3 colunas, enquanto os demais elementos ocupam somente 1 coluna
+        layoutManager.spanSizeLookup = object: GridLayoutManager.SpanSizeLookup(){
+            override fun getSpanSize(position: Int): Int {
+                return when (position) {
+                    0 -> 3
+                    else -> 1
+                }
+            }
+        }
+
+        recyclerProfile.layoutManager = layoutManager
         recyclerProfile.adapter = adapter
 
         //Listener para saber se a lista está proxima do fim e assim carregar mais Posts
@@ -94,8 +106,6 @@ class ProfileActivity : AppCompatActivity() {
         }
 
         getInitialPosts()
-
-        showProfile(profile)
 
         swipeContainerProfile.setOnRefreshListener {
             adapter.updatePosts(mutableListOf(), true)
@@ -145,20 +155,6 @@ class ProfileActivity : AppCompatActivity() {
             finish()
         }
         return super.onOptionsItemSelected(item)
-    }
-
-    // Responsável por carregar as informações do perfil da Pessoa
-    fun showProfile(profile: Profile){
-        val personName = findViewById<TextView>(R.id.personNameProfile)
-        val personObjective = findViewById<TextView>(R.id.personGoalProfile)
-        val profileImage = findViewById<CircleImageView>(R.id.personProfileImageProfile)
-
-        Picasso.get()
-                .load(profile.image).placeholder(R.drawable.ic_account_circle_black_24dp)
-                .into(profileImage)
-
-        personName.text = profile.name
-        personObjective.text = profile.generalGoal
     }
 
 }

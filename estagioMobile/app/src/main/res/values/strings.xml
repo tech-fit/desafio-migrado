@@ -2,12 +2,12 @@
     <string name="app_name">mobiletest</string>
 
     <string name="meal_of">Refeição de</string>
-    <string name="energy_label">Cal</string>
-    <string name="energy_unity">Kcal</string>
-    <string name="grams_unity">g</string>
-    <string name="carbohydrate_label">Carb</string>
-    <string name="protein_label">Prot</string>
-    <string name="fat_label">Gord</string>
+    <string name="energy_label">%s Cal</string>
+    <string name="energy_unity">%s Kcal</string>
+    <string name="grams_unity">%s g</string>
+    <string name="carbohydrate_label">%s Carb</string>
+    <string name="protein_label">%s Prot</string>
+    <string name="fat_label">%s Gord</string>
     <string name="food_grams_mask">(%s g)</string>
     <string name="food_summary">Total Consumido</string>
     <string name="kcal_mask">%s kcal</string>

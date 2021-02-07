@@ -18,6 +18,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.android.synthetic.main.activity_post.swipeContainerPost
+import java.lang.String.format
 
 class PostActivity : AppCompatActivity() {
 
@@ -113,10 +114,22 @@ class PostActivity : AppCompatActivity() {
         val totalProtQuantity = findViewById<TextView>(R.id.totalFoodProtQuantity)
         val totalFatQuantity = findViewById<TextView>(R.id.totalFoodFatQuantity)
 
-        totalFoodEnergyQuantity.text = post.energy.round().toString().plus(" kcal")
-        totalFoodCarbQuantity.text = post.carbohydrate.round().toString().plus(" g")
-        totalProtQuantity.text = post.protein.round().toString().plus(" g")
-        totalFatQuantity.text = post.fat.round().toString().plus(" g")
+        totalFoodEnergyQuantity.text = String.format(
+                getString(R.string.kcal_mask),
+                        post.energy.round()
+                )
+        totalFoodCarbQuantity.text = String.format(
+                getString(R.string.carbohydrate_label),
+                post.carbohydrate.round()
+        )
+        totalProtQuantity.text = String.format(
+                getString(R.string.protein_label),
+                post.protein.round()
+        )
+        totalFatQuantity.text = String.format(
+                getString(R.string.fat_label),
+                post.fat.round()
+        )
     }
 
     // Responsável por limitar o número de casas decimais dos nutrientes exibidos

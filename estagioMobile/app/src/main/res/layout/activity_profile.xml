@@ -11,51 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/personProfileImageProfile"
-                    android:layout_width="match_parent"
-                    android:layout_height="75dp"
-                    android:layout_marginTop="30dp"
-                    android:gravity="center"
-                    android:src="@drawable/ic_account_circle_black_24dp" />
-
-                <TextView
-                    android:id="@+id/personNameProfile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    tools:text="Nome do Autor"
-                    style="@style/miniDarkText"/>
-
-                <TextView
-                    android:id="@+id/personGoalProfile"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:gravity="center"
-                    tools:text="Objetivo"
-                    style="@style/miniGrayText"/>
-
                 <!-- Lembrar de implementar o RecyclerView em Grid de 3 colunas-->
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recyclerProfile"
+                    android:scaleType="fitXY"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
 
     </com.baoyz.widget.PullRefreshLayout>
 
